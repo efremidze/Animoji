@@ -1,0 +1,10 @@
+framework module Animoji {
+    umbrella header "Animoji.h"
+    header "AVTAvatarInstance.h"
+    header "AVTAvatarView.h"
+    header "AVTPuppet.h"
+    header "AVTPuppetView.h"
+    
+    module * { export * }
+    export *
+}

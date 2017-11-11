@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		710F67151FB54D1C0077FBD7 /* Animoji.h in Headers */ = {isa = PBXBuildFile; fileRef = 710F67131FB54D1C0077FBD7 /* Animoji.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		712B62BC1FB6B01700F55487 /* AvatarKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 712B62BB1FB6B01700F55487 /* AvatarKit.framework */; };
+		712B62BD1FB6B02A00F55487 /* AvatarKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 712B62BB1FB6B01700F55487 /* AvatarKit.framework */; };
+		712B62BF1FB6B07E00F55487 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 712B62BE1FB6B07E00F55487 /* README.md */; };
+		712B62C11FB6B3E800F55487 /* AVTAvatarInstance.h in Headers */ = {isa = PBXBuildFile; fileRef = 712B62C01FB6B39800F55487 /* AVTAvatarInstance.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		718273961FB54E4100635687 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718273951FB54E4100635687 /* AppDelegate.swift */; };
 		718273981FB54E4100635687 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718273971FB54E4100635687 /* ViewController.swift */; };
 		7182739B1FB54E4100635687 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 718273991FB54E4100635687 /* Main.storyboard */; };
@@ -16,6 +20,9 @@
 		718273A51FB54E4A00635687 /* Animoji.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 710F67101FB54D1C0077FBD7 /* Animoji.framework */; };
 		718273A61FB54E4A00635687 /* Animoji.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 710F67101FB54D1C0077FBD7 /* Animoji.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		718273AB1FB54E6000635687 /* Animoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718273AA1FB54E6000635687 /* Animoji.swift */; };
+		71ACBA4C1FB6A8490089E4CD /* AVTPuppet.h in Headers */ = {isa = PBXBuildFile; fileRef = 71ACBA461FB69BC50089E4CD /* AVTPuppet.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		71ACBA4D1FB6A8490089E4CD /* AVTPuppetView.h in Headers */ = {isa = PBXBuildFile; fileRef = 71ACBA471FB69BF00089E4CD /* AVTPuppetView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		71ACBA4E1FB6A8490089E4CD /* AVTAvatarView.h in Headers */ = {isa = PBXBuildFile; fileRef = 71ACBA481FB69C0E0089E4CD /* AVTAvatarView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +53,9 @@
 		710F67101FB54D1C0077FBD7 /* Animoji.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Animoji.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		710F67131FB54D1C0077FBD7 /* Animoji.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Animoji.h; sourceTree = "<group>"; };
 		710F67141FB54D1C0077FBD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		712B62BB1FB6B01700F55487 /* AvatarKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AvatarKit.framework; path = Frameworks/AvatarKit.framework; sourceTree = "<group>"; };
+		712B62BE1FB6B07E00F55487 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		712B62C01FB6B39800F55487 /* AVTAvatarInstance.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AVTAvatarInstance.h; sourceTree = "<group>"; };
 		718273931FB54E4100635687 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		718273951FB54E4100635687 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		718273971FB54E4100635687 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +64,9 @@
 		7182739F1FB54E4100635687 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		718273A11FB54E4100635687 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		718273AA1FB54E6000635687 /* Animoji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animoji.swift; sourceTree = "<group>"; };
+		71ACBA461FB69BC50089E4CD /* AVTPuppet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AVTPuppet.h; sourceTree = "<group>"; };
+		71ACBA471FB69BF00089E4CD /* AVTPuppetView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AVTPuppetView.h; sourceTree = "<group>"; };
+		71ACBA481FB69C0E0089E4CD /* AVTAvatarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AVTAvatarView.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				712B62BC1FB6B01700F55487 /* AvatarKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				712B62BD1FB6B02A00F55487 /* AvatarKit.framework in Frameworks */,
 				718273A51FB54E4A00635687 /* Animoji.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -78,9 +93,11 @@
 		710F67061FB54D1C0077FBD7 = {
 			isa = PBXGroup;
 			children = (
+				712B62BE1FB6B07E00F55487 /* README.md */,
 				710F67121FB54D1C0077FBD7 /* Animoji */,
 				718273941FB54E4100635687 /* Example */,
 				710F67111FB54D1C0077FBD7 /* Products */,
+				712B62B81FB6B00400F55487 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,12 +113,32 @@
 		710F67121FB54D1C0077FBD7 /* Animoji */ = {
 			isa = PBXGroup;
 			children = (
+				71240F371FB654B70039C7B4 /* Headers */,
 				710F67131FB54D1C0077FBD7 /* Animoji.h */,
 				718273AA1FB54E6000635687 /* Animoji.swift */,
 				710F67141FB54D1C0077FBD7 /* Info.plist */,
 			);
 			name = Animoji;
 			path = Sources;
+			sourceTree = "<group>";
+		};
+		71240F371FB654B70039C7B4 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				712B62C01FB6B39800F55487 /* AVTAvatarInstance.h */,
+				71ACBA481FB69C0E0089E4CD /* AVTAvatarView.h */,
+				71ACBA461FB69BC50089E4CD /* AVTPuppet.h */,
+				71ACBA471FB69BF00089E4CD /* AVTPuppetView.h */,
+			);
+			path = Headers;
+			sourceTree = "<group>";
+		};
+		712B62B81FB6B00400F55487 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				712B62BB1FB6B01700F55487 /* AvatarKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		718273941FB54E4100635687 /* Example */ = {
@@ -124,7 +161,11 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71ACBA4D1FB6A8490089E4CD /* AVTPuppetView.h in Headers */,
+				71ACBA4C1FB6A8490089E4CD /* AVTPuppet.h in Headers */,
+				71ACBA4E1FB6A8490089E4CD /* AVTAvatarView.h in Headers */,
 				710F67151FB54D1C0077FBD7 /* Animoji.h in Headers */,
+				712B62C11FB6B3E800F55487 /* AVTAvatarInstance.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,6 +254,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				712B62BF1FB6B07E00F55487 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,15 +435,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
-				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+					"$(PROJECT_DIR)/Sources",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "$(SRCROOT)/Sources/module.modulemap";
 				PRODUCT_BUNDLE_IDENTIFIER = com.efremidze.Animoji;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -415,15 +461,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
-				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+					"$(PROJECT_DIR)/Sources",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "$(SRCROOT)/Sources/module.modulemap";
 				PRODUCT_BUNDLE_IDENTIFIER = com.efremidze.Animoji;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -437,7 +487,11 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NNRNHY2N8B;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				INFOPLIST_FILE = Example/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.efremidze.Example;
@@ -452,7 +506,11 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NNRNHY2N8B;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				INFOPLIST_FILE = Example/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.efremidze.Example;
