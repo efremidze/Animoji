@@ -10,21 +10,15 @@ import Foundation
 import SceneKit
 
 public class Animoji: AVTPuppetView {
-    public func setRandomPuppet() {
-        let names = AVTPuppet.puppetNames() as? [String]
-        guard let name = names?.first else { return }
-        let puppet = AVTPuppet.puppetNamed(name, options: nil)
+    public enum PuppetName: String {
+        // Generated using AVTPuppet.puppetNames()
+        case monkey, robot, cat, dog, alien, fox, poo, pig, panda, rabbit, chicken, unicorn
+        
+        static let all: [PuppetName] = [monkey, robot, cat, dog, alien, fox, poo, pig, panda, rabbit, chicken, unicorn]
+    }
+    
+    public func setPuppet(name: PuppetName) {
+        let puppet = AVTPuppet.puppetNamed(name.rawValue, options: nil)
         avatarInstance = puppet as? AVTAvatarInstance
     }
-}
-
-func propertyNames(forClass: AnyClass) -> [String] {
-    var count = UInt32()
-    guard let properties = class_copyPropertyList(forClass, &count) else { fatalError("missing properties") }
-    let names: [String] = (0..<Int(count)).flatMap { i in
-        let property: objc_property_t = properties[i]
-        return String(cString: property_getName(property))
-    }
-    free(properties)
-    return names
 }
