@@ -15,14 +15,16 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        Animoji.foo()
+        let animoji = Animoji()
+        animoji.frame = self.view.bounds
+        self.view.addSubview(animoji)
+        
+        animoji.setRandomPuppet()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
 }
-
