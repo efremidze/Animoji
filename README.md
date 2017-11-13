@@ -34,13 +34,31 @@ $ pod try Animoji
 
 ## Usage
 
-### Privacy Settings
+## The Basics
 
-You must provide a description for how your app uses the following privacy settings in your app's Info.plist file.
+The `Animoji` class generates, manages and displays Animoji. Animoji are a subclass of [SCNView](https://developer.apple.com/documentation/scenekit/scnview).
 
-* NSPhotoLibraryAddUsageDescription
-* NSMicrophoneUsageDescription
-* NSCameraUsageDescription
+```swift
+import Animoji
+
+class ViewController: UIViewController {
+
+    lazy var animoji: Animoji = {
+        let animoji = Animoji(frame: self.view.bounds)
+        self.view.addSubview(animoji)
+        return animoji
+    }()
+    
+}
+```
+
+## Puppets
+
+Display puppets by selecting a puppet from [PuppetName](https://github.com/efremidze/Animoji/blob/master/Sources/Animoji.swift).
+
+```swift
+animoji.setPuppet(name: .cat)
+```
 
 ## Installation
 
@@ -56,6 +74,14 @@ To install with [Carthage](https://github.com/Carthage/Carthage), simply add thi
 ```ruby
 github "efremidze/Animoji"
 ```
+
+### Privacy Settings
+
+You must provide a description for how your app uses the following privacy settings in your app's Info.plist file.
+
+* NSPhotoLibraryAddUsageDescription
+* NSMicrophoneUsageDescription
+* NSCameraUsageDescription
 
 ## Disclaimer
 
