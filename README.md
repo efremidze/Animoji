@@ -38,6 +38,8 @@ $ pod try Animoji
 
 ## Usage
 
+You can initialize an _Animoji_ like a UIView. _Animoji_ is a `SCNView` so if your using a storyboard/xib use a SceneKit View.
+
 ```swift
 import Animoji
 
@@ -68,9 +70,9 @@ To install with [Carthage](https://github.com/Carthage/Carthage), simply add thi
 github "efremidze/Animoji"
 ```
 
-## Troubleshooting
+## Internals
 
-* No simulator support yet
+Animoji uses iPhone X and iOS 11.1 features so no Simulator support yet.
 
 ### Privacy Settings
 
