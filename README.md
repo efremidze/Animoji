@@ -99,4 +99,4 @@ Feel free to submit a PR if you’re using this library in your apps.
 
 ## License
 
-Magnetic is available under the MIT license. See the LICENSE file for more info.
+Animoji is available under the MIT license. See the LICENSE file for more info.
