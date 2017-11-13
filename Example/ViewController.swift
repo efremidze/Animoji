@@ -13,7 +13,11 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var animoji: Animoji! {
         didSet {
-            animoji.setPuppet(name: .cat)
+            for (index, name) in Animoji.PuppetName.all.enumerated() {
+                DispatchQueue.main.asyncAfter(deadline: .now() + (10 * Double(index))) {
+                    self.animoji.setPuppet(name: name)
+                }
+            }
         }
     }
     

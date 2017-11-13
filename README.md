@@ -1,6 +1,26 @@
-# Animoji
+<p align="center">
+<img src="Images/logo.png" width="890" alt="Animoji" />
+</p>
 
-Animoji is an iOS library that gives access to the private framework AvatarKit to generate Animoji, just like the Messages app.
+<p align="center">
+<a href="https://swift.org" target="_blank">
+<img alt="Language" src="https://img.shields.io/badge/Swift-4-orange.svg?style=flat">
+</a>
+<a href="http://cocoapods.org/pods/Animoji" target="_blank">
+<img alt="Version" src="https://img.shields.io/cocoapods/v/Animoji.svg?style=flat">
+</a>
+<a href="http://cocoapods.org/pods/Animoji" target="_blank">
+<img alt="License" src="https://img.shields.io/cocoapods/l/Animoji.svg?style=flat">
+</a>
+<a href="http://cocoapods.org/pods/Animoji" target="_blank">
+<img alt="Platform" src="https://img.shields.io/cocoapods/p/Animoji.svg?style=flat">
+</a>
+<a href="https://github.com/Carthage/Carthage" target="_blank">
+<img alt="Carthage compatible" src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat">
+</a>
+</p>
+
+**Animoji** is an iOS library that gives access to the private framework AvatarKit to generate Animoji, just like the Messages app.
 
 ```
 $ pod try Animoji
