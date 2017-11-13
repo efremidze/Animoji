@@ -13,6 +13,7 @@
 
 //@property (nonatomic, retain) NSString *puppetName;
 - (void)setPuppetName:(NSString *)puppetName;
-- (NSArray *)puppetNames;
++ (NSArray *)puppetNames;
++ (UIImage *)thumbnailForPuppetNamed:(NSString *)string;
 
 @end

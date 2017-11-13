@@ -61,9 +61,14 @@
     self.puppetView.avatarInstance = (AVTAvatarInstance *)puppet;
 }
 
-- (NSArray *)puppetNames
++ (NSArray *)puppetNames
 {
     return [NSClassFromString(@"AVTPuppet") puppetNames];
+}
+
++ (UIImage *)thumbnailForPuppetNamed:(NSString *)string
+{
+    return [NSClassFromString(@"AVTPuppet") thumbnailForPuppetNamed:string options: nil];
 }
 
 @end
