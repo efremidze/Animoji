@@ -34,7 +34,7 @@ $ pod try Animoji
 
 ## Usage
 
-## The Basics
+### The Basics
 
 The `Animoji` class generates, manages and displays Animoji. Animoji are a subclass of [SCNView](https://developer.apple.com/documentation/scenekit/scnview).
 
@@ -52,7 +52,7 @@ class ViewController: UIViewController {
 }
 ```
 
-## Puppets
+### Puppets
 
 Display puppets by selecting a puppet from [PuppetName](https://github.com/efremidze/Animoji/blob/master/Sources/Animoji.swift).
 
