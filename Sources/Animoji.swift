@@ -29,7 +29,6 @@ public class Animoji: AnimojiView {
     public func setPuppet(name: PuppetName) {
 //        let puppet = AVTPuppet.puppetNamed(name.rawValue, options: nil)
 //        avatarInstance = puppet as? AVTAvatarInstance
-        puppetNames().forEach { print($0) }
         setPuppetName(name.rawValue)
     }
     
