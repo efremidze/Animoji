@@ -15,7 +15,7 @@ import SceneKit
 //    func didStopRecording(animoji: Animoji)
 //}
 
-public class Animoji: AVTPuppetView {
+public class Animoji: AnimojiView {
     public enum PuppetName: String {
         // Generated using AVTPuppet.puppetNames()
         case monkey, robot, cat, dog, alien, fox, poo, pig, panda, rabbit, chicken, unicorn
@@ -27,8 +27,10 @@ public class Animoji: AVTPuppetView {
 //    public weak var delegate: AnimojiDelegate?
     
     public func setPuppet(name: PuppetName) {
-        let puppet = AVTPuppet.puppetNamed(name.rawValue, options: nil)
-        avatarInstance = puppet as? AVTAvatarInstance
+//        let puppet = AVTPuppet.puppetNamed(name.rawValue, options: nil)
+//        avatarInstance = puppet as? AVTAvatarInstance
+        puppetNames().forEach { print($0) }
+        setPuppetName(name.rawValue)
     }
     
 //    override public func startRecording() {
