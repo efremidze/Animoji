@@ -19,20 +19,42 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1vY-dD-sVr" customClass="Animoji" customModule="Animoji">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="467"/>
                             </sceneKitView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="BCn-R2-pK3">
+                                <rect key="frame" x="0.0" y="467" width="375" height="200"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="Euq-Dg-dr4"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="V3z-9h-Lhh">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="aHg-Ve-sp4"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="gug-ID-pzK"/>
+                                </connections>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="BCn-R2-pK3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ArI-YE-6D3"/>
+                            <constraint firstItem="BCn-R2-pK3" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="FeJ-fQ-Zmq"/>
                             <constraint firstItem="1vY-dD-sVr" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="JEL-7X-l3F"/>
-                            <constraint firstItem="1vY-dD-sVr" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="QVr-dR-QGo"/>
                             <constraint firstItem="1vY-dD-sVr" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="WeD-fr-OhG"/>
                             <constraint firstItem="1vY-dD-sVr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="fdD-ZL-tBP"/>
+                            <constraint firstItem="BCn-R2-pK3" firstAttribute="top" secondItem="1vY-dD-sVr" secondAttribute="bottom" id="hmM-D8-S67"/>
+                            <constraint firstItem="BCn-R2-pK3" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="mCs-xj-Px0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="animoji" destination="1vY-dD-sVr" id="VRp-j2-INL"/>
+                        <outlet property="collectionView" destination="BCn-R2-pK3" id="GV6-Cm-tG6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
