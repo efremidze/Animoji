@@ -22,6 +22,8 @@
 
 **Animoji** is an iOS library that gives access to the private framework AvatarKit to generate Animoji, just like the Messages app.
 
+<img src="https://thumbs.gfycat.com/FlawlessCleverBluejay-size_restricted.gif" width="320">
+
 ```
 $ pod try Animoji
 ```
