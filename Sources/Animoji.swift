@@ -20,7 +20,7 @@ public class Animoji: AnimojiView {
         // Generated using AVTPuppet.puppetNames()
         case monkey, robot, cat, dog, alien, fox, poo, pig, panda, rabbit, chicken, unicorn
         
-        static let all: [PuppetName] = [monkey, robot, cat, dog, alien, fox, poo, pig, panda, rabbit, chicken, unicorn]
+        public static let all: [PuppetName] = [monkey, robot, cat, dog, alien, fox, poo, pig, panda, rabbit, chicken, unicorn]
     }
     
 //    public var maxDuration: Int = 60
