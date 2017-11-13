@@ -60,6 +60,14 @@ Display puppets by selecting a puppet from [PuppetName](https://github.com/efrem
 animoji.setPuppet(name: .cat)
 ```
 
+### Privacy Settings
+
+You must provide a description for how your app uses the following privacy settings in your app's Info.plist file.
+
+* NSPhotoLibraryAddUsageDescription
+* NSMicrophoneUsageDescription
+* NSCameraUsageDescription
+
 ## Installation
 
 ### CocoaPods
@@ -74,14 +82,6 @@ To install with [Carthage](https://github.com/Carthage/Carthage), simply add thi
 ```ruby
 github "efremidze/Animoji"
 ```
-
-### Privacy Settings
-
-You must provide a description for how your app uses the following privacy settings in your app's Info.plist file.
-
-* NSPhotoLibraryAddUsageDescription
-* NSMicrophoneUsageDescription
-* NSCameraUsageDescription
 
 ## Disclaimer
 
