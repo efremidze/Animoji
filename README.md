@@ -2,10 +2,15 @@
 
 Animoji is an iOS library that gives access to the private framework AvatarKit to generate Animoji, just like the Messages app.
 
+```
+$ pod try Animoji
+```
+
 ## Requirements
 
-- iOS 11.1 and later
-- Swift 4 and later
+- iOS 11.1
+- Xcode 9.1
+- Swift 4
 
 ## Usage
 
