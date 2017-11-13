@@ -64,7 +64,11 @@ To install with [Carthage](https://github.com/Carthage/Carthage), simply add thi
 github "efremidze/Animoji"
 ```
 
-## Privacy Settings
+## Troubleshooting
+
+* No simulator support yet
+
+### Privacy Settings
 
 You must provide a description for how your app uses the following privacy settings in your app's Info.plist file.
 
