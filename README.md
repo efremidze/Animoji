@@ -34,6 +34,32 @@ $ pod try Animoji
 
 ## Usage
 
+### The Basics
+
+The `Animoji` class generates, manages and displays Animoji. Animoji are a subclass of [SCNView](https://developer.apple.com/documentation/scenekit/scnview).
+
+```swift
+import Animoji
+
+class ViewController: UIViewController {
+
+    lazy var animoji: Animoji = {
+        let animoji = Animoji(frame: self.view.bounds)
+        self.view.addSubview(animoji)
+        return animoji
+    }()
+    
+}
+```
+
+### Puppets
+
+Display puppets by selecting a puppet from [PuppetName](https://github.com/efremidze/Animoji/blob/master/Sources/Animoji.swift).
+
+```swift
+animoji.setPuppet(name: .cat)
+```
+
 ### Privacy Settings
 
 You must provide a description for how your app uses the following privacy settings in your app's Info.plist file.
@@ -73,4 +99,4 @@ Feel free to submit a PR if you’re using this library in your apps.
 
 ## License
 
-Magnetic is available under the MIT license. See the LICENSE file for more info.
+Animoji is available under the MIT license. See the LICENSE file for more info.
