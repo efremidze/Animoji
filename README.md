@@ -22,6 +22,8 @@
 
 **Animoji** is an iOS library that gives access to the private framework AvatarKit to generate Animoji, just like the Messages app.
 
+Animoji uses iPhone X and iOS 11.1 features so no Simulator support yet.
+
 <img src="https://thumbs.gfycat.com/FlawlessCleverBluejay-size_restricted.gif" width="320">
 
 [Demo Video](https://gfycat.com/gifs/detail/FlawlessCleverBluejay)
@@ -57,6 +59,8 @@ class ViewController: UIViewController {
 
 ## Installation
 
+Animoji is available via CocoaPods and Carthage.
+
 ### CocoaPods
 To install with [CocoaPods](http://cocoapods.org/), simply add this in your `Podfile`:
 ```ruby
@@ -70,11 +74,7 @@ To install with [Carthage](https://github.com/Carthage/Carthage), simply add thi
 github "efremidze/Animoji"
 ```
 
-## Internals
-
-Animoji uses iPhone X and iOS 11.1 features so no Simulator support yet.
-
-### Privacy Settings
+## Privacy Settings
 
 You must provide a description for how your app uses the following privacy settings in your app's Info.plist file.
 
