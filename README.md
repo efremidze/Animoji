@@ -23,6 +23,7 @@
 **Animoji** is an iOS library that gives access to the private framework AvatarKit to generate Animoji, just like the Messages app.
 
 *Support for recording coming soon!*
+
 *100% Swift version coming soon!*
 
 **Animoji uses iPhone X and iOS 11.1 features so no Simulator support yet.**
