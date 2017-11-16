@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1vY-dD-sVr" customClass="Animoji" customModule="Animoji">
+                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1vY-dD-sVr" customClass="PuppetView" customModule="Animoji">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="407"/>
                             </sceneKitView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="BCn-R2-pK3">
@@ -53,8 +53,8 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="animoji" destination="1vY-dD-sVr" id="VRp-j2-INL"/>
                         <outlet property="collectionView" destination="BCn-R2-pK3" id="GV6-Cm-tG6"/>
+                        <outlet property="puppetView" destination="1vY-dD-sVr" id="0Z4-ug-xid"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
