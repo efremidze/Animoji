@@ -29,60 +29,45 @@ public enum PuppetName: String {
     public static let all: [PuppetName] = [monkey, robot, cat, dog, alien, fox, poo, pig, panda, rabbit, chicken, unicorn]
 }
 
-public protocol AvatarView {
+public protocol AvatarViewProtocol {
     var avatarInstance: Any? { get set }
 }
 
-public protocol PuppetView: AvatarView {
-    func setPuppetName(_ puppetName: String!)
+public protocol PuppetViewProtocol: AvatarViewProtocol {
+    
 }
 
-public protocol Puppet {
+//public extension PuppetView {
+//    public mutating func setPuppet(name: PuppetName) {
+//        avatarInstance = Animoji.puppet.puppetNamed(arg1: name.rawValue, options: nil)
+//    }
+//}
+
+public protocol PuppetProtocol {
     static func puppetNamed(arg1: Any?, options: Any?) -> Any?
     static func puppetNames() -> Any?
 }
 
-//protocol PuppetProtocol {
-//    + (id)puppetNamed:(id)arg1 options:(id)arg2;
-//    + (id)puppetNames;
-//    + (UIImage *)thumbnailForPuppetNamed:(id)arg1 options:(id)arg2;
-//    static var puppetNames: [String] { get }
-//}
-
-//class Puppet: NSObject, PuppetProtocol {
-//    static func make() -> Puppet {
-//        let myClass = NSClassFromString("AVTPuppet") as! Puppet.Type
-//        return myClass.init()
-//    }
-//}
-
 // AnimojiFactory
-public class Animoji: SCNView {
-    private var puppetView: PuppetView!
+public class PuppetView: SCNView {
+    let instance: SCNView // PuppetViewProtocol
     
     public required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        
         let bundle = Bundle(path: "/System/Library/PrivateFrameworks/AvatarKit.framework")!
         assert(bundle.load())
         
-        // add methods to class by looping through objc runtime methods/properties
-        // build generic factory to make any class
-    }
-    
-    // make AVTPuppetView instance
-    class var puppetView: PuppetView.Type {
-        return NSClassFromString("AVTPuppetView") as! PuppetView.Type
-    }
-    
-    // make AVTPuppet instance
-    class var puppet: Puppet.Type {
-        return NSClassFromString("AVTPuppet") as! Puppet.Type
+        let classType = NSClassFromString("AVTPuppetView") as! SCNView.Type
+        instance = classType.init()
+        
+        super.init(coder: aDecoder)
+        
+        instance.frame = self.bounds
+        instance.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        self.addSubview(instance)
     }
 }
 
-public extension PuppetView {
-    public mutating func setPuppet(name: PuppetName) {
-        avatarInstance = Animoji.puppet.puppetNamed(arg1: name.rawValue, options: nil)
-    }
-}
+//public class Puppet: NSObject {
+//    let instance: PuppetProtocol
+//
+//}
