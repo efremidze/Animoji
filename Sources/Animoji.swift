@@ -15,12 +15,60 @@ import SceneKit
 //    func didStopRecording(animoji: Animoji)
 //}
 
+//class Box<T> {
+//    let value: T
+//    init(value: T) {
+//        self.value = value
+//    }
+//}
+
+public enum PuppetName: String {
+    // Generated using AVTPuppet.puppetNames()
+    case monkey, robot, cat, dog, alien, fox, poo, pig, panda, rabbit, chicken, unicorn
+    
+    public static let all: [PuppetName] = [monkey, robot, cat, dog, alien, fox, poo, pig, panda, rabbit, chicken, unicorn]
+}
+
+protocol PuppetView {
+    func setPuppetName(_ puppetName: String!)
+}
+
+protocol PuppetProtocol {
+//    + (id)puppetNamed:(id)arg1 options:(id)arg2;
+//    + (id)puppetNames;
+//    + (UIImage *)thumbnailForPuppetNamed:(id)arg1 options:(id)arg2;
+//    static var puppetNames: [String] { get }
+}
+
+//class Puppet: NSObject, PuppetProtocol {
+//    static func make() -> Puppet {
+//        let myClass = NSClassFromString("AVTPuppet") as! Puppet.Type
+//        return myClass.init()
+//    }
+//}
+
+// AnimojiFactory
 public class Animoji: AnimojiView {
-    public enum PuppetName: String {
-        // Generated using AVTPuppet.puppetNames()
-        case monkey, robot, cat, dog, alien, fox, poo, pig, panda, rabbit, chicken, unicorn
+    private var puppetView: PuppetView!
+    
+    public required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
         
-        public static let all: [PuppetName] = [monkey, robot, cat, dog, alien, fox, poo, pig, panda, rabbit, chicken, unicorn]
+        let bundle = Bundle(path: "/System/Library/PrivateFrameworks/AvatarKit.framework")!
+        assert(bundle.load())
+        
+        // add methods to class by looping through objc runtime methods/properties
+        // build generic factory to make any class
+    }
+    
+    class var puppetView: PuppetView {
+        return factory(className: "AVTPuppetView", of: PuppetView.self)
+//        return NSClassFromString("AVTPuppetView") as! PuppetView
+    }
+    
+    // make this into enum/struct init
+    class func factory<T>(className: String, of type: T.Type) -> T {
+        return NSClassFromString(className) as! T
     }
     
 //    public var maxDuration: Int = 60
@@ -29,7 +77,10 @@ public class Animoji: AnimojiView {
     public func setPuppet(name: PuppetName) {
 //        let puppet = AVTPuppet.puppetNamed(name.rawValue, options: nil)
 //        avatarInstance = puppet as? AVTAvatarInstance
-        setPuppetName(name.rawValue)
+        
+        
+        
+//        puppetView.setPuppetName(name.rawValue)
     }
     
 //    override public func startRecording() {
