@@ -17,9 +17,9 @@
 		718273A51FB54E4A00635687 /* Animoji.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 710F67101FB54D1C0077FBD7 /* Animoji.framework */; };
 		718273A61FB54E4A00635687 /* Animoji.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 710F67101FB54D1C0077FBD7 /* Animoji.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		718273AB1FB54E6000635687 /* Animoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718273AA1FB54E6000635687 /* Animoji.swift */; };
-		71EB03861FB980DA00D2A101 /* AVTPuppetView.h in Headers */ = {isa = PBXBuildFile; fileRef = 71EB03821FB980DA00D2A101 /* AVTPuppetView.h */; };
-		71EB03871FB980DA00D2A101 /* AVTAvatarView.h in Headers */ = {isa = PBXBuildFile; fileRef = 71EB03831FB980DA00D2A101 /* AVTAvatarView.h */; };
-		71EB03881FB980DA00D2A101 /* AVTPuppet.h in Headers */ = {isa = PBXBuildFile; fileRef = 71EB03841FB980DA00D2A101 /* AVTPuppet.h */; };
+		71EB03861FB980DA00D2A101 /* AVTPuppetView.h in Headers */ = {isa = PBXBuildFile; fileRef = 71EB03821FB980DA00D2A101 /* AVTPuppetView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		71EB03871FB980DA00D2A101 /* AVTAvatarView.h in Headers */ = {isa = PBXBuildFile; fileRef = 71EB03831FB980DA00D2A101 /* AVTAvatarView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		71EB03881FB980DA00D2A101 /* AVTPuppet.h in Headers */ = {isa = PBXBuildFile; fileRef = 71EB03841FB980DA00D2A101 /* AVTPuppet.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */

@@ -49,14 +49,23 @@ public protocol PuppetProtocol {
 }
 
 // AnimojiFactory
+
+// write class that makes forwards all methods using runtime to instance or some protocol defined variable
+
+protocol ForwardInvocationProtocol {
+    associatedtype T
+    var instance: T { get }
+    func swizzleMethods()
+}
+
 public class PuppetView: SCNView {
-    let instance: SCNView // PuppetViewProtocol
+    let instance: AVTPuppetView // PuppetViewProtocol
     
     public required init?(coder aDecoder: NSCoder) {
         let bundle = Bundle(path: "/System/Library/PrivateFrameworks/AvatarKit.framework")!
         assert(bundle.load())
         
-        let classType = NSClassFromString("AVTPuppetView") as! SCNView.Type
+        let classType = NSClassFromString("AVTPuppetView") as! AVTPuppetView.Type
         instance = classType.init()
         
         super.init(coder: aDecoder)
@@ -71,3 +80,26 @@ public class PuppetView: SCNView {
 //    let instance: PuppetProtocol
 //
 //}
+
+//open class AVTPuppetView : AVTAvatarView {
+//    open var previewing: Bool { get }
+//    open var recording: Bool { get }
+//    open func audioPlayerItemDidReachEnd(_ arg1: Any!)
+//    open func exportMovie(toURL arg1: Any!, options arg2: Any!, completionHandler arg3: Any!) -> Bool /* block */
+//    open func recordingDuration() -> Double
+//    open func startPreviewing()
+//    open func startRecording()
+//    open func stopPreviewing()
+//    open func stopRecording()
+//}
+//
+//open class AVTPuppet : NSObject {
+//    open class func puppetNamed(_ arg1: Any!, options arg2: Any!) -> Any!
+//    open class func puppetNames() -> Any!
+//    open class func thumbnail(forPuppetNamed arg1: Any!, options arg2: Any!) -> Any!
+//}
+//
+//open class AVTAvatarView : SCNView {
+//    open var avatarInstance: AVTAvatarInstance!
+//}
+

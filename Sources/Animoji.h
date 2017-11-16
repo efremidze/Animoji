@@ -17,4 +17,8 @@ FOUNDATION_EXPORT const unsigned char AnimojiVersionString[];
 // In this header, you should import all the public headers of your framework using statements like #import <Animoji/PublicHeader.h>
 
 //#import "AnimojiView.h"
-#import <Animoji/AnimojiView.h>
+//#import <Animoji/AnimojiView.h>
+
+#import <Animoji/AVTAvatarView.h>
+#import <Animoji/AVTPuppetView.h>
+#import <Animoji/AVTPuppet.h>
