@@ -29,16 +29,25 @@ public enum PuppetName: String {
     public static let all: [PuppetName] = [monkey, robot, cat, dog, alien, fox, poo, pig, panda, rabbit, chicken, unicorn]
 }
 
-protocol PuppetView {
+public protocol AvatarView {
+    var avatarInstance: Any? { get set }
+}
+
+public protocol PuppetView: AvatarView {
     func setPuppetName(_ puppetName: String!)
 }
 
-protocol PuppetProtocol {
+public protocol Puppet {
+    static func puppetNamed(arg1: Any?, options: Any?) -> Any?
+    static func puppetNames() -> Any?
+}
+
+//protocol PuppetProtocol {
 //    + (id)puppetNamed:(id)arg1 options:(id)arg2;
 //    + (id)puppetNames;
 //    + (UIImage *)thumbnailForPuppetNamed:(id)arg1 options:(id)arg2;
 //    static var puppetNames: [String] { get }
-}
+//}
 
 //class Puppet: NSObject, PuppetProtocol {
 //    static func make() -> Puppet {
@@ -48,7 +57,7 @@ protocol PuppetProtocol {
 //}
 
 // AnimojiFactory
-public class Animoji: AnimojiView {
+public class Animoji: SCNView {
     private var puppetView: PuppetView!
     
     public required init?(coder aDecoder: NSCoder) {
@@ -61,51 +70,19 @@ public class Animoji: AnimojiView {
         // build generic factory to make any class
     }
     
-    class var puppetView: PuppetView {
-        return factory(className: "AVTPuppetView", of: PuppetView.self)
-//        return NSClassFromString("AVTPuppetView") as! PuppetView
+    // make AVTPuppetView instance
+    class var puppetView: PuppetView.Type {
+        return NSClassFromString("AVTPuppetView") as! PuppetView.Type
     }
     
-    // make this into enum/struct init
-    class func factory<T>(className: String, of type: T.Type) -> T {
-        return NSClassFromString(className) as! T
+    // make AVTPuppet instance
+    class var puppet: Puppet.Type {
+        return NSClassFromString("AVTPuppet") as! Puppet.Type
     }
-    
-//    public var maxDuration: Int = 60
-//    public weak var delegate: AnimojiDelegate?
-    
-    public func setPuppet(name: PuppetName) {
-//        let puppet = AVTPuppet.puppetNamed(name.rawValue, options: nil)
-//        avatarInstance = puppet as? AVTAvatarInstance
-        
-        
-        
-//        puppetView.setPuppetName(name.rawValue)
+}
+
+public extension PuppetView {
+    public mutating func setPuppet(name: PuppetName) {
+        avatarInstance = Animoji.puppet.puppetNamed(arg1: name.rawValue, options: nil)
     }
-    
-//    override public func startRecording() {
-//        super.startRecording()
-//
-//        let duration = maxDuration * 60
-//
-//        let timesBuffer = Data(capacity: duration * 8)
-//        let blendShapeBuffer = Data(capacity: duration * 204)
-//        let transformData = Data(capacity: duration * 64)
-//
-//        setValue(duration, forKey: "_recordingCapacity")
-//        setValue(timesBuffer, forKey: "_rawTimesData")
-//        setValue(blendShapeBuffer, forKey: "_rawBlendShapesData")
-//        setValue(transformData, forKey: "_rawTransformsData")
-//
-//        let ivar = class_getInstanceVariable(AVTPuppetView.self, "_rawTimes")
-//        object_setIvar(self, ivar!, timesBuffer)
-//
-//        let ivar2 = class_getInstanceVariable(AVTPuppetView.self, "_rawBlendShapes")
-//        object_setIvar(self, ivar2!, blendShapeBuffer)
-//
-//        let ivar3 = class_getInstanceVariable(AVTPuppetView.self, "_rawTransforms")
-//        object_setIvar(self, ivar3!, transformData)
-//
-//        playbackDelegate?.didStartRecording(animoji: self)
-//    }
 }
