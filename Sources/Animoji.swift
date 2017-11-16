@@ -52,10 +52,23 @@ public protocol PuppetProtocol {
 
 // write class that makes forwards all methods using runtime to instance or some protocol defined variable
 
+// makes a class act like another class without subclassing
 protocol ForwardInvocationProtocol {
     associatedtype T
     var instance: T { get }
     func swizzleMethods()
+}
+
+extension ForwardInvocationProtocol {
+    func swizzleMethods() {
+        // loop through all methods and call instance method
+        // this includes protocols methods
+        
+        // basically if u have func foo(), call instance.foo(), similar to super.foo()
+        // swizzle these functions to call the instance fuctions
+        
+        // first get all functions then loop through them and swizzle them
+    }
 }
 
 public class PuppetView: SCNView {
