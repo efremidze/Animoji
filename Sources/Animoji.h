@@ -19,6 +19,7 @@ FOUNDATION_EXPORT const unsigned char AnimojiVersionString[];
 //#import "AnimojiView.h"
 //#import <Animoji/AnimojiView.h>
 
-#import <Animoji/AVTAvatarView.h>
-#import <Animoji/AVTPuppetView.h>
-#import <Animoji/AVTPuppet.h>
+//#import <Animoji/AVTAvatarView.h>
+//#import <Animoji/AVTPuppetView.h>
+//#import <Animoji/AVTPuppet.h>
+

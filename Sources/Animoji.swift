@@ -29,8 +29,8 @@ public enum PuppetName: String {
     public static let all: [PuppetName] = [monkey, robot, cat, dog, alien, fox, poo, pig, panda, rabbit, chicken, unicorn]
 }
 
-public protocol AvatarViewProtocol {
-    var avatarInstance: Any? { get set }
+public protocol AvatarViewProtocol: class {
+    var avatarInstance: Any! { get set }
 }
 
 public protocol PuppetViewProtocol: AvatarViewProtocol {
@@ -43,9 +43,9 @@ public protocol PuppetViewProtocol: AvatarViewProtocol {
 //    }
 //}
 
-public protocol PuppetProtocol {
+public protocol PuppetProtocol: class {
     static func puppetNamed(arg1: Any?, options: Any?) -> Any?
-    static func puppetNames() -> Any?
+//    static func puppetNames() -> Any?
 }
 
 // AnimojiFactory
@@ -71,28 +71,50 @@ extension ForwardInvocationProtocol {
     }
 }
 
-public class PuppetView: SCNView {
-    let instance: AVTPuppetView // PuppetViewProtocol
-    
-    public required init?(coder aDecoder: NSCoder) {
+protocol InstanceProtocol {
+    associatedtype T
+    static var instance: T.Type { get }
+    var instance: T { get set }
+}
+
+public class PuppetView: SCNView, PuppetViewProtocol {
+    static var instance: PuppetViewProtocol.Protocol {
+        return NSClassFromString("AVTPuppetView") as! SCNView.Type
+    }
+    lazy var instance: PuppetViewProtocol = { [unowned self] in
         let bundle = Bundle(path: "/System/Library/PrivateFrameworks/AvatarKit.framework")!
         assert(bundle.load())
         
-        let classType = NSClassFromString("AVTPuppetView") as! AVTPuppetView.Type
-        instance = classType.init()
-        
-        super.init(coder: aDecoder)
-        
-        instance.frame = self.bounds
-        instance.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        self.addSubview(instance)
+        let classType = type(of: self).instance
+        let object = classType.init()
+        object.frame = self.bounds
+        object.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        self.addSubview(object)
+        return object
+    }()
+    
+    public var avatarInstance: Any! {
+        get { return instance.avatarInstance }
+        set { instance.avatarInstance = newValue }
     }
 }
 
-//public class Puppet: NSObject {
-//    let instance: PuppetProtocol
-//
-//}
+public class Puppet: NSObject, PuppetProtocol, InstanceProtocol {
+    static var instance: PuppetProtocol.Protocol {
+        return NSClassFromString("AVTPuppet") as! NSObject.Type
+    }
+    lazy var instance: PuppetProtocol = { [unowned self] in
+        let bundle = Bundle(path: "/System/Library/PrivateFrameworks/AvatarKit.framework")!
+        assert(bundle.load())
+        
+        let classType = type(of: self).instance
+        return classType.init()
+    }()
+    
+    public static func puppetNamed(arg1: Any?, options: Any?) -> Any? {
+        return instance.puppetNamed(arg1: arg1, options: options)
+    }
+}
 
 //open class AVTPuppetView : AVTAvatarView {
 //    open var previewing: Bool { get }
