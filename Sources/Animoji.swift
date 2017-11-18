@@ -116,6 +116,40 @@ public class Puppet: NSObject, PuppetProtocol, InstanceProtocol {
     }
 }
 
+// Key-Value Coding
+// Create reference to the ForceUser.name key path
+// let nameKeyPath = \ForceUser.name
+// Access the value from key path on instance
+// let obiwanName = obiwan[keyPath: nameKeyPath]  // "Obi-Wan Kenobi"
+
+func getMethods() {
+    var mc: CUnsignedInt = 0
+    var mlist: UnsafeMutablePointer<Method?> = class_copyMethodList(FirstViewController.classForCoder(), &mc)
+    let olist = mlist
+    print("\(mc) methods")
+    
+    for i in (0..<mc) {
+        print("Method #\(i): \(method_getName(mlist.pointee))")
+        mlist = mlist.successor()
+    }
+    free(olist)
+}
+
+func propertyNames(forClass: AnyClass) -> [String] {
+    var count = UInt32()
+    let properties = class_copyPropertyList(forClass, &count)
+    let names: [String] = (0..<Int(count)).flatMap { i in
+        let property: objc_property_t = properties[i]
+        guard let name = NSString(UTF8String: property_getName(property)) as? String else {
+            debugPrint("Couldn't unwrap property name for \(property)")
+            return nil
+        }
+        return name
+    }
+    free(properties)
+    return names
+}
+
 //open class AVTPuppetView : AVTAvatarView {
 //    open var previewing: Bool { get }
 //    open var recording: Bool { get }
