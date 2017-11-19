@@ -46,7 +46,7 @@
 @class AVTAvatarInstance;
 
 @interface AVTPuppet: NSObject
-+ (id)puppetNamed:(id)arg1 options:(id)arg2;
-+ (id)puppetNames;
-+ (UIImage *)thumbnailForPuppetNamed:(id)arg1 options:(id)arg2;
++ (instancetype)puppetNamed:(NSString *)arg1 options:(id)arg2;
++ (NSArray *)puppetNames;
++ (UIImage *)thumbnailForPuppetNamed:(NSString *)arg1 options:(id)arg2;
 @end

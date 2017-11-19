@@ -1,0 +1,6 @@
+module AvatarKit {
+  header "AVTPuppetView.h"
+  header "AVTAvatarView.h"
+  header "AVTPuppet.h"
+  header "AVTAvatarInstance.h"
+}
