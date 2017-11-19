@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var puppetView: PuppetView! {
         didSet {
             let name = PuppetName.all[0]
+            Puppet.puppetNames().forEach { print($0) }
 //            animoji.setPuppet(name: name)
         }
     }
