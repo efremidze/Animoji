@@ -10,18 +10,23 @@ import Foundation
 import ObjectiveC.runtime
 
 // https://codelle.com/blog/2016/2/calling-methods-from-strings-in-swift/
-func extractMethodFrom(_ owner: AnyObject, _ selector: Selector) -> ((Any?, Any?) -> AnyObject)? {
-    guard let method = methodFrom(owner, selector) else { return nil }
-    
-    let implementation = method_getImplementation(method)
-    
-    typealias Function = @convention(c) (AnyObject, Selector, Any?, Any?) -> Unmanaged<AnyObject>
-    let function = unsafeBitCast(implementation, to: Function.self)
-    
-    return { arg1, arg2 in function(owner, selector, arg1, arg2).takeUnretainedValue() }
+func extractMethod(_ owner: AnyObject, _ selector: Selector, _ arg1: Any?) -> AnyObject? {
+    guard let method = getMethod(owner, selector) else { return nil }
+    let imp = method_getImplementation(method)
+    typealias CFunction = @convention(c) (AnyObject, Selector, Any?) -> Unmanaged<AnyObject>
+    let function = unsafeBitCast(imp, to: CFunction.self)
+    return function(owner, selector, arg1).takeUnretainedValue()
 }
 
-func methodFrom(_ owner: AnyObject, _ selector: Selector) -> Method? {
+func extractMethod(_ owner: AnyObject, _ selector: Selector, _ arg1: Any?, _ arg2: Any?) -> AnyObject? {
+    guard let method = getMethod(owner, selector) else { return nil }
+    let imp = method_getImplementation(method)
+    typealias CFunction = @convention(c) (AnyObject, Selector, Any?, Any?) -> Unmanaged<AnyObject>
+    let function = unsafeBitCast(imp, to: CFunction.self)
+    return function(owner, selector, arg1, arg2).takeUnretainedValue()
+}
+
+private func getMethod(_ owner: AnyObject, _ selector: Selector) -> Method? {
     if let owner = owner as? AnyClass {
         return class_getClassMethod(owner, selector)
     } else {

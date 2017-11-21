@@ -14,9 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var puppetView: PuppetView! {
         didSet {
             let name = PuppetName.all[0]
-            Puppet.puppetNames().forEach { print($0) }
-            print(Puppet.puppetNamed("cat", options: nil))
-//            animoji.setPuppet(name: name)
+            puppetView.avatarInstance = Puppet.puppetNamed(name.rawValue)
         }
     }
     
@@ -55,7 +53,7 @@ extension ViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! Cell
         let name = PuppetName.all[indexPath.item]
-//        cell.imageView.image = Animoji.thumbnail(forPuppetNamed: name.rawValue)
+        cell.imageView.image = Puppet.thumbnail(forPuppetNamed: name.rawValue)
         return cell
     }
 }
@@ -63,7 +61,7 @@ extension ViewController: UICollectionViewDataSource {
 extension ViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let name = PuppetName.all[indexPath.item]
-//        animoji.setPuppet(name: name)
+        puppetView.avatarInstance = Puppet.puppetNamed(name.rawValue)
     }
 }
 

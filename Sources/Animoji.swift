@@ -38,36 +38,25 @@ public class PuppetView: SCNView {
         self.addSubview(object)
         return object
     }()
+    open var avatarInstance: Any? {
+        get { return instance.value(forKeyPath: "avatarInstance") }
+        set { instance.setValue(newValue, forKeyPath: "avatarInstance") }
+    }
 }
-
-//@_silgen_name("objc_msgSend")
-//func sendPerformSelector(NSObject, Selector, Selector) -> NSString
 
 open class Puppet: NSObject {
     lazy var instance: NSObject = { [unowned self] in
         return AvatarKit.shared.puppet.init()
     }()
-    open class func puppetNamed(_ arg1: Any!, options arg2: Any!) -> Any {
-        let name = "puppetNamed:options:"
-        if let method = extractMethodFrom(AvatarKit.shared.puppet, Selector(name)) {
-            return method("cat", nil)
-            // Use image here
-        }
-        return true
-//        let value = objc_msgSend(NSClassFromString("AVTPuppet"), NSSelectorFromString("puppetNamed:options:"), arg1, arg2)
-//        return AvatarKit.shared.puppet.perform(NSSelectorFromString("puppetNamed:options:"), with: arg1, with: arg2).takeRetainedValue()
-//        return AvatarKit.shared.puppet.value(forKeyPath: "puppetNamed") as Any
+    open class func puppetNamed(_ name: String) -> Any? {
+        return extractMethod(AvatarKit.shared.puppet, Selector("puppetNamed:options:"), name, nil)
     }
     open class func puppetNames() -> [String] {
         return AvatarKit.shared.puppet.value(forKeyPath: "puppetNames") as! [String]
     }
-    open class func thumbnail(forPuppetNamed arg1: Any!, options arg2: Any!) -> UIImage {
-        return AvatarKit.shared.puppet.value(forKeyPath: "thumbnail") as! UIImage
+    open class func thumbnail(forPuppetNamed name: String) -> UIImage? {
+        return extractMethod(AvatarKit.shared.puppet, Selector("thumbnailForPuppetNamed:options:"), name, nil) as? UIImage
     }
-    
-//    public static func puppetNamed(arg1: Any?, options: Any?) -> Any? {
-//        return instance.puppetNamed(arg1: arg1, options: options)
-//    }
 }
 
 //open class AVTPuppetView : AVTAvatarView {
