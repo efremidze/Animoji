@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		710F67151FB54D1C0077FBD7 /* Animoji.h in Headers */ = {isa = PBXBuildFile; fileRef = 710F67131FB54D1C0077FBD7 /* Animoji.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		712B62BF1FB6B07E00F55487 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 712B62BE1FB6B07E00F55487 /* README.md */; };
+		715446F91FC4E54A00D25B2B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715446F81FC4E54A00D25B2B /* Extensions.swift */; };
 		718273961FB54E4100635687 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718273951FB54E4100635687 /* AppDelegate.swift */; };
 		718273981FB54E4100635687 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718273971FB54E4100635687 /* ViewController.swift */; };
 		7182739B1FB54E4100635687 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 718273991FB54E4100635687 /* Main.storyboard */; };
@@ -51,6 +52,7 @@
 		710F67131FB54D1C0077FBD7 /* Animoji.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Animoji.h; sourceTree = "<group>"; };
 		710F67141FB54D1C0077FBD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		712B62BE1FB6B07E00F55487 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		715446F81FC4E54A00D25B2B /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		718273931FB54E4100635687 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		718273951FB54E4100635687 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		718273971FB54E4100635687 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 			children = (
 				710F67131FB54D1C0077FBD7 /* Animoji.h */,
 				718273AA1FB54E6000635687 /* Animoji.swift */,
+				715446F81FC4E54A00D25B2B /* Extensions.swift */,
 				71EB03811FB980DA00D2A101 /* Headers */,
 				710F67141FB54D1C0077FBD7 /* Info.plist */,
 			);
@@ -258,6 +261,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				718273AB1FB54E6000635687 /* Animoji.swift in Sources */,
+				715446F91FC4E54A00D25B2B /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

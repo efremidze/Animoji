@@ -15,6 +15,7 @@ class ViewController: UIViewController {
         didSet {
             let name = PuppetName.all[0]
             Puppet.puppetNames().forEach { print($0) }
+            print(Puppet.puppetNamed("cat", options: nil))
 //            animoji.setPuppet(name: name)
         }
     }

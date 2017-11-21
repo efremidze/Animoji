@@ -40,12 +40,23 @@ public class PuppetView: SCNView {
     }()
 }
 
+//@_silgen_name("objc_msgSend")
+//func sendPerformSelector(NSObject, Selector, Selector) -> NSString
+
 open class Puppet: NSObject {
     lazy var instance: NSObject = { [unowned self] in
         return AvatarKit.shared.puppet.init()
     }()
     open class func puppetNamed(_ arg1: Any!, options arg2: Any!) -> Any {
-        return AvatarKit.shared.puppet.value(forKeyPath: "puppetNamed") as Any
+        let name = "puppetNamed:options:"
+        if let method = extractMethodFrom(AvatarKit.shared.puppet, Selector(name)) {
+            return method("cat", nil)
+            // Use image here
+        }
+        return true
+//        let value = objc_msgSend(NSClassFromString("AVTPuppet"), NSSelectorFromString("puppetNamed:options:"), arg1, arg2)
+//        return AvatarKit.shared.puppet.perform(NSSelectorFromString("puppetNamed:options:"), with: arg1, with: arg2).takeRetainedValue()
+//        return AvatarKit.shared.puppet.value(forKeyPath: "puppetNamed") as Any
     }
     open class func puppetNames() -> [String] {
         return AvatarKit.shared.puppet.value(forKeyPath: "puppetNames") as! [String]
@@ -58,12 +69,6 @@ open class Puppet: NSObject {
 //        return instance.puppetNamed(arg1: arg1, options: options)
 //    }
 }
-
-// Key-Value Coding
-// Create reference to the ForceUser.name key path
-// let nameKeyPath = \ForceUser.name
-// Access the value from key path on instance
-// let obiwanName = obiwan[keyPath: nameKeyPath]  // "Obi-Wan Kenobi"
 
 //open class AVTPuppetView : AVTAvatarView {
 //    open var previewing: Bool { get }
