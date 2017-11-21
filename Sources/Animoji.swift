@@ -49,13 +49,13 @@ open class Puppet: NSObject {
         return AvatarKit.shared.puppet.init()
     }()
     open class func puppetNamed(_ name: String) -> Any? {
-        return extractMethod(AvatarKit.shared.puppet, Selector("puppetNamed:options:"), name, nil)
+        return extractMethod(AvatarKit.shared.puppet, Selector(("puppetNamed:options:")), name, nil)
     }
     open class func puppetNames() -> [String] {
         return AvatarKit.shared.puppet.value(forKeyPath: "puppetNames") as! [String]
     }
     open class func thumbnail(forPuppetNamed name: String) -> UIImage? {
-        return extractMethod(AvatarKit.shared.puppet, Selector("thumbnailForPuppetNamed:options:"), name, nil) as? UIImage
+        return extractMethod(AvatarKit.shared.puppet, Selector(("thumbnailForPuppetNamed:options:")), name, nil) as? UIImage
     }
 }
 
