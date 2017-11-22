@@ -9,30 +9,35 @@
 import Foundation
 import SceneKit
 
-struct AvatarKit {
+let AKPuppet = AvatarKit.shared.AKPuppet
+let AKPuppetView = AvatarKit.shared.AKPuppetView
+
+private class AvatarKit {
     static let shared = AvatarKit()
     init() {
         let bundle = Bundle(path: "/System/Library/PrivateFrameworks/AvatarKit.framework")!
         assert(bundle.load())
     }
-    var puppetView: SCNView.Type {
-        return NSClassFromString("AVTPuppetView") as! SCNView.Type
-    }
-    var puppet: NSObject.Type {
-        return NSClassFromString("AVTPuppet") as! NSObject.Type
-    }
+//    var puppetView: SCNView.Type {
+//        return NSClassFromString("AVTPuppetView") as! SCNView.Type
+//    }
+//    var puppet: NSObject.Type {
+//        return NSClassFromString("AVTPuppet") as! NSObject.Type
+//    }
+    lazy var AKPuppet = NSClassFromString("AVTPuppet") as! NSObject.Type
+    lazy var AKPuppetView = NSClassFromString("AVTPuppetView") as! SCNView.Type
 }
 
-public enum PuppetName: String {
+public enum PuppetItem: String {
     // Generated using AVTPuppet.puppetNames()
     case monkey, robot, cat, dog, alien, fox, poo, pig, panda, rabbit, chicken, unicorn
     
-    public static let all: [PuppetName] = [monkey, robot, cat, dog, alien, fox, poo, pig, panda, rabbit, chicken, unicorn]
+    public static let all: [PuppetItem] = [monkey, robot, cat, dog, alien, fox, poo, pig, panda, rabbit, chicken, unicorn]
 }
 
 public class PuppetView: SCNView {
-    lazy var instance: SCNView = { [unowned self] in
-        let object = AvatarKit.shared.puppetView.init()
+    open lazy var instance: SCNView = { [unowned self] in
+        let object = AKPuppetView.init()
         object.frame = self.bounds
         object.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.addSubview(object)
@@ -42,20 +47,34 @@ public class PuppetView: SCNView {
         get { return instance.value(forKeyPath: "avatarInstance") }
         set { instance.setValue(newValue, forKeyPath: "avatarInstance") }
     }
+//    open func setPuppet(_ item: PuppetItem) {
+//        avatarInstance = Puppet.puppetNamed(item.rawValue)
+//    }
 }
 
-open class Puppet: NSObject {
-    lazy var instance: NSObject = { [unowned self] in
-        return AvatarKit.shared.puppet.init()
-    }()
-    open class func puppetNamed(_ name: String) -> Any? {
-        return extractMethod(AvatarKit.shared.puppet, Selector(("puppetNamed:options:")), name, nil)
+open class Puppet<T: NSObject> {
+    open let value: T
+    public init(_ value: T) {
+        self.value = value
+    }
+    open var avatarNode: SCNNode? {
+        return value.value(forKeyPath: "avatarNode") as? SCNNode
+    }
+    open var lightingNode: SCNNode? {
+        return value.value(forKeyPath: "lightingNode") as? SCNNode
+    }
+    open var options: NSDictionary? {
+        return value.value(forKeyPath: "options") as? NSDictionary
+    }
+    open class func puppetNamed(_ name: String) -> Puppet<T>? {
+        let value = extractMethod(AKPuppet, Selector(("puppetNamed:options:")), name, nil) as? T
+        return value.map { Puppet($0) }
     }
     open class func puppetNames() -> [String] {
-        return AvatarKit.shared.puppet.value(forKeyPath: "puppetNames") as! [String]
+        return AKPuppet.value(forKeyPath: "puppetNames") as! [String]
     }
     open class func thumbnail(forPuppetNamed name: String) -> UIImage? {
-        return extractMethod(AvatarKit.shared.puppet, Selector(("thumbnailForPuppetNamed:options:")), name, nil) as? UIImage
+        return extractMethod(AKPuppet, Selector(("thumbnailForPuppetNamed:options:")), name, nil) as? UIImage
     }
 }
 

@@ -13,8 +13,9 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var puppetView: PuppetView! {
         didSet {
-            let name = PuppetName.all[0]
-            puppetView.avatarInstance = Puppet.puppetNamed(name.rawValue)
+            let item = PuppetItem.all[0]
+            let puppet = Puppet.puppetNamed(item.rawValue)
+            puppetView.avatarInstance = puppet?.value
         }
     }
     
@@ -47,21 +48,21 @@ class ViewController: UIViewController {
 
 extension ViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return PuppetName.all.count
+        return PuppetItem.all.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! Cell
-        let name = PuppetName.all[indexPath.item]
-        cell.imageView.image = Puppet.thumbnail(forPuppetNamed: name.rawValue)
+        let item = PuppetItem.all[indexPath.item]
+        cell.imageView.image = Puppet.thumbnail(forPuppetNamed: item.rawValue)
         return cell
     }
 }
 
 extension ViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let name = PuppetName.all[indexPath.item]
-        puppetView.avatarInstance = Puppet.puppetNamed(name.rawValue)
+        let item = PuppetItem.all[indexPath.item]
+        puppetView.avatarInstance = Puppet.puppetNamed(item.rawValue)?.value
     }
 }
 
