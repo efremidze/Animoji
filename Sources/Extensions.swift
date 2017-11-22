@@ -33,3 +33,21 @@ private func getMethod(_ owner: AnyObject, _ selector: Selector) -> Method? {
         return class_getInstanceMethod(type(of: owner), selector)
     }
 }
+
+private class Associated<Type>: NSObject {
+    let value: Type
+    init(_ value: Type) {
+        self.value = value
+    }
+}
+
+protocol Associable {}
+extension Associable where Self: NSObject {
+    func _value<T>(forKeyPath keyPath: String) -> T? {
+        return (value(forKeyPath: keyPath) as? Associated<T>).map { $0.value }
+    }
+    func _setValue<T>(_ value: T?, forKeyPath keyPath: String) {
+        setValue(value.map { Associated<T>($0) }, forKeyPath: keyPath)
+    }
+}
+extension NSObject: Associable {}

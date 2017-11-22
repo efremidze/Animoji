@@ -14,8 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var puppetView: PuppetView! {
         didSet {
             let item = PuppetItem.all[0]
-            let puppet = Puppet.puppetNamed(item.rawValue)
-            puppetView.avatarInstance = puppet?.value
+            puppetView.avatarInstance = Puppet.puppetNamed(item.rawValue)?.value
         }
     }
     

@@ -18,12 +18,6 @@ private class AvatarKit {
         let bundle = Bundle(path: "/System/Library/PrivateFrameworks/AvatarKit.framework")!
         assert(bundle.load())
     }
-//    var puppetView: SCNView.Type {
-//        return NSClassFromString("AVTPuppetView") as! SCNView.Type
-//    }
-//    var puppet: NSObject.Type {
-//        return NSClassFromString("AVTPuppet") as! NSObject.Type
-//    }
     lazy var AKPuppet = NSClassFromString("AVTPuppet") as! NSObject.Type
     lazy var AKPuppetView = NSClassFromString("AVTPuppetView") as! SCNView.Type
 }
@@ -36,7 +30,7 @@ public enum PuppetItem: String {
 }
 
 public class PuppetView: SCNView {
-    open lazy var instance: SCNView = { [unowned self] in
+    open lazy var value: SCNView = { [unowned self] in
         let object = AKPuppetView.init()
         object.frame = self.bounds
         object.autoresizingMask = [.flexibleWidth, .flexibleHeight]
@@ -44,8 +38,8 @@ public class PuppetView: SCNView {
         return object
     }()
     open var avatarInstance: Any? {
-        get { return instance.value(forKeyPath: "avatarInstance") }
-        set { instance.setValue(newValue, forKeyPath: "avatarInstance") }
+        get { return value.value(forKeyPath: "avatarInstance") }
+        set { value.setValue(newValue, forKeyPath: "avatarInstance") }
     }
 //    open func setPuppet(_ item: PuppetItem) {
 //        avatarInstance = Puppet.puppetNamed(item.rawValue)
@@ -58,17 +52,13 @@ open class Puppet<T: NSObject> {
         self.value = value
     }
     open var avatarNode: SCNNode? {
-        return value.value(forKeyPath: "avatarNode") as? SCNNode
+        return value._value(forKeyPath: "avatarNode")
     }
     open var lightingNode: SCNNode? {
-        return value.value(forKeyPath: "lightingNode") as? SCNNode
-    }
-    open var options: NSDictionary? {
-        return value.value(forKeyPath: "options") as? NSDictionary
+        return value._value(forKeyPath: "lightingNode")
     }
     open class func puppetNamed(_ name: String) -> Puppet<T>? {
-        let value = extractMethod(AKPuppet, Selector(("puppetNamed:options:")), name, nil) as? T
-        return value.map { Puppet($0) }
+        return (extractMethod(AKPuppet, Selector(("puppetNamed:options:")), name, nil) as? T).map { Puppet($0) }
     }
     open class func puppetNames() -> [String] {
         return AKPuppet.value(forKeyPath: "puppetNames") as! [String]
