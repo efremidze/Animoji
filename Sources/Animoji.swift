@@ -32,6 +32,10 @@ public class Animoji: AnimojiView {
         setPuppetName(name.rawValue)
     }
     
+    override public func snapshot(with size: CGSize) -> UIImage! {
+        return super.snapshot(with:size)
+    }
+    
 //    override public func startRecording() {
 //        super.startRecording()
 //
