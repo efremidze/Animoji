@@ -49,16 +49,9 @@ You can initialize an _Animoji_ like a UIView. _Animoji_ is a `SCNView` so if yo
 ```swift
 import Animoji
 
-class ViewController: UIViewController {
-
-    lazy var animoji: Animoji = {
-        let animoji = Animoji(frame: self.view.bounds)
-        animoji.setPuppet(name: .cat) // set puppet
-        self.view.addSubview(animoji)
-        return animoji
-    }()
-    
-}
+let animoji = Animoji(frame: self.view.bounds)
+animoji.setPuppet(name: .cat) // set puppet
+view.addSubview(animoji)
 ```
 
 ## Installation
