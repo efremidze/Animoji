@@ -40,7 +40,7 @@ $ pod try Animoji
 
 - iOS 11.1+
 - Xcode 9.1+
-- Swift 4.0+
+- Swift 4
 
 ## Usage
 
