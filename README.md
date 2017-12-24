@@ -38,9 +38,9 @@ $ pod try Animoji
 
 ## Requirements
 
-- iOS 11.1
-- Xcode 9.1
-- Swift 4
+- iOS 11.1+
+- Xcode 9.1+
+- Swift 4.0+
 
 ## Usage
 
