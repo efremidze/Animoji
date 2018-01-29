@@ -19,6 +19,7 @@ public class Animoji: AnimojiView {
     public enum PuppetName: String {
         // Generated using AVTPuppet.puppetNames()
         case monkey, robot, cat, dog, alien, fox, poo, pig, panda, rabbit, chicken, unicorn
+        // case lion, dragon, skull, bear
         
         public static let all: [PuppetName] = [monkey, robot, cat, dog, alien, fox, poo, pig, panda, rabbit, chicken, unicorn]
     }
@@ -30,6 +31,10 @@ public class Animoji: AnimojiView {
 //        let puppet = AVTPuppet.puppetNamed(name.rawValue, options: nil)
 //        avatarInstance = puppet as? AVTAvatarInstance
         setPuppetName(name.rawValue)
+    }
+    
+    public func setPuppet(name: String) {
+        setPuppetName(name)
     }
     
 //    override public func startRecording() {
