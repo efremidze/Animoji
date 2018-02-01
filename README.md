@@ -22,6 +22,8 @@
 
 **Animoji** is an iOS library that gives access to the private framework AvatarKit to generate Animoji, just like the Messages app.
 
+*Supports 11.3 Animoji (lion, dragon, skull, bear)!*
+
 *Support for recording coming soon!*
 
 *100% Swift version coming soon!*
@@ -50,7 +52,18 @@ You can initialize an _Animoji_ like a UIView. _Animoji_ is a `SCNView` so if yo
 import Animoji
 
 let animoji = Animoji(frame: self.view.bounds)
-animoji.setPuppet(name: .cat) // set puppet
+animoji.setPuppet(name: .cat)
+view.addSubview(animoji)
+```
+
+#### iOS 11.3 Support
+
+```swift
+import Animoji
+
+let animoji = Animoji(frame: self.view.bounds)
+// set iOS 11.3 puppet (lion, dragon, skull, bear)
+animoji.setPuppet(name: "dragon")
 view.addSubview(animoji)
 ```
 
