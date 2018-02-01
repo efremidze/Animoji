@@ -22,7 +22,7 @@
 
 **Animoji** is an iOS library that gives access to the private framework AvatarKit to generate Animoji, just like the Messages app.
 
-*Supports 11.3 Animoji (lion, dragon, skull, bear)!*
+*Supports iOS 11.3 Animoji (lion, dragon, skull, bear)!*
 
 *Support for recording coming soon!*
 
