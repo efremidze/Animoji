@@ -9,6 +9,7 @@
 #import "AnimojiView.h"
 #import "AVTPuppetView.h"
 #import "AVTPuppet.h"
+#import <objc/runtime.h>
 
 @interface AnimojiView ()
 
@@ -69,6 +70,42 @@
 + (UIImage *)thumbnailForPuppetNamed:(NSString *)string
 {
     return [NSClassFromString(@"AVTPuppet") thumbnailForPuppetNamed:string options: nil];
+}
+
+- (void)startRecording
+{
+    [self.puppetView startRecording];
+    
+    int duration = self.maxRecordingDuration * 60;
+    
+    NSMutableData *timesBuffer = [NSMutableData dataWithCapacity: duration * 8];
+    NSMutableData *blendShapeBuffer = [NSMutableData dataWithCapacity: duration * 204];
+    NSMutableData *transformData = [NSMutableData dataWithCapacity: duration * 64];
+    
+    [self setValue:[NSNumber numberWithInt:duration] forKey:@"_recordingCapacity"];
+    [self setValue:timesBuffer forKey:@"_rawTimesData"];
+    [self setValue:blendShapeBuffer forKey:@"_rawBlendShapesData"];
+    [self setValue:transformData forKey:@"_rawTransformsData"];
+    
+    {
+        Ivar ivar = class_getInstanceVariable(NSClassFromString(@"AVTPuppetView"), "_rawTimes");
+        object_setIvar(self, ivar, [timesBuffer mutableBytes]);
+    }
+    
+    {
+        Ivar ivar = class_getInstanceVariable(NSClassFromString(@"AVTPuppetView"), "_rawBlendShapes");
+        object_setIvar(self, ivar, [blendShapeBuffer mutableBytes]);
+    }
+    
+    {
+        Ivar ivar = class_getInstanceVariable(NSClassFromString(@"AVTPuppetView"), "_rawTransforms");
+        object_setIvar(self, ivar, [transformData mutableBytes]);
+    }
+}
+
+- (void)stopRecording
+{
+    [self.puppetView stopRecording];
 }
 
 @end

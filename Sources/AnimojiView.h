@@ -12,8 +12,14 @@
 @interface AnimojiView : SCNView
 
 //@property (nonatomic, retain) NSString *puppetName;
+
 - (void)setPuppetName:(NSString *)puppetName;
 + (NSArray *)puppetNames;
 + (UIImage *)thumbnailForPuppetNamed:(NSString *)string;
+
+- (void)startRecording;
+- (void)stopRecording;
+
+@property (nonatomic, assign) int maxRecordingDuration;
 
 @end
