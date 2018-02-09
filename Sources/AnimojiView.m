@@ -72,6 +72,16 @@
     return [NSClassFromString(@"AVTPuppet") thumbnailForPuppetNamed:string options: nil];
 }
 
+- (double)maxRecordingDuration
+{
+    return _maxRecordingDuration ? _maxRecordingDuration : 60;
+}
+
+- (double)recordingDuration
+{
+    return self.puppetView.recordingDuration;
+}
+
 - (void)startRecording
 {
     [self.puppetView startRecording];
@@ -106,6 +116,16 @@
 - (void)stopRecording
 {
     [self.puppetView stopRecording];
+}
+
+- (void)startPreviewing
+{
+    [self.puppetView startPreviewing];
+}
+
+- (void)stopPreviewing
+{
+    [self.puppetView stopPreviewing];
 }
 
 @end

@@ -26,7 +26,7 @@
 
 *Support for recording coming soon!*
 
-*100% Swift version coming soon!*
+*[100% Swift version coming soon!](https://github.com/efremidze/Animoji/tree/develop)*
 
 **Animoji uses iPhone X and iOS 11.1 features so no Simulator support yet.**
 
