@@ -11,19 +11,16 @@
 
 @interface AnimojiView : SCNView
 
-//@property (nonatomic, retain) NSString *puppetName;
-
 - (void)setPuppetName:(NSString *)puppetName;
 + (NSArray *)puppetNames;
 + (UIImage *)thumbnailForPuppetNamed:(NSString *)string;
 
+@property (getter=isPreviewing, nonatomic, readonly) bool previewing;
+@property (getter=isRecording, nonatomic, readonly) bool recording;
 @property (nonatomic, assign) double maxRecordingDuration; // Defaults to 60 seconds
 
-//@property (getter=isPreviewing, nonatomic, readonly) bool previewing;
-//@property (getter=isRecording, nonatomic, readonly) bool recording;
-//- (void)audioPlayerItemDidReachEnd:(id)arg1;
-//- (bool)exportMovieToURL:(id)arg1 options:(id)arg2 completionHandler:(id /* block */)arg3;
-
+- (void)audioPlayerItemDidReachEnd:(id)arg1;
+- (bool)exportMovieToURL:(id)arg1 options:(id)arg2 completionHandler:(id /* block */)arg3;
 - (double)recordingDuration;
 - (void)startPreviewing;
 - (void)startRecording;

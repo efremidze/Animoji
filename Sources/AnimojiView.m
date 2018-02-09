@@ -72,9 +72,29 @@
     return [NSClassFromString(@"AVTPuppet") thumbnailForPuppetNamed:string options: nil];
 }
 
+- (bool)isPreviewing
+{
+    return self.puppetView.isPreviewing;
+}
+
+- (bool)isRecording
+{
+    return self.puppetView.isRecording;
+}
+
 - (double)maxRecordingDuration
 {
     return _maxRecordingDuration ? _maxRecordingDuration : 60;
+}
+
+- (void)audioPlayerItemDidReachEnd:(id)arg1
+{
+    [self.puppetView audioPlayerItemDidReachEnd:arg1];
+}
+
+- (bool)exportMovieToURL:(id)arg1 options:(id)arg2 completionHandler:(id /* block */)arg3
+{
+    return [self.puppetView exportMovieToURL:arg1 options:arg2 completionHandler:arg3];
 }
 
 - (double)recordingDuration
