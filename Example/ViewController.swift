@@ -13,8 +13,8 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var animoji: Animoji! {
         didSet {
-            let name = Animoji.PuppetName.all[0]
-            animoji.setPuppet(name: name)
+            let name = puppetNames[0]
+            animoji.setPuppetName(name)
         }
     }
     
@@ -37,6 +37,10 @@ class ViewController: UIViewController {
         return collectionView.collectionViewLayout as! UICollectionViewFlowLayout
     }
     
+    lazy var puppetNames: [String] = {
+        return Animoji.puppetNames() as! [String]
+    }()
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
@@ -48,19 +52,19 @@ class ViewController: UIViewController {
         layout.itemSize = CGSize(width: width, height: width)
     }
     
-    @IBAction func record(_ sender: UIButton) {
+    @IBAction func record(sender: UIButton) {
         
     }
     
-    @IBAction func preview(_ sender: UIButton) {
+    @IBAction func preview(sender: UIButton) {
         
     }
     
-    @IBAction func delete(_ sender: UIButton) {
+    @IBAction func delete(sender: UIButton) {
         
     }
     
-    @IBAction func share(_ sender: UIButton) {
+    @IBAction func share(sender: UIButton) {
         
     }
     
@@ -68,21 +72,21 @@ class ViewController: UIViewController {
 
 extension ViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return Animoji.PuppetName.all.count
+        return puppetNames.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! Cell
-        let name = Animoji.PuppetName.all[indexPath.item]
-        cell.imageView.image = Animoji.thumbnail(forPuppetNamed: name.rawValue)
+        let name = puppetNames[indexPath.item]
+        cell.imageView.image = Animoji.thumbnail(forPuppetNamed: name)
         return cell
     }
 }
 
 extension ViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let name = Animoji.PuppetName.all[indexPath.item]
-        animoji.setPuppet(name: name)
+        let name = puppetNames[indexPath.item]
+        animoji.setPuppetName(name)
     }
 }
 
