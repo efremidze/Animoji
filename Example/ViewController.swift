@@ -13,6 +13,7 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var animoji: Animoji! {
         didSet {
+            animoji.animojiDelegate = self
             let name = puppetNames[0]
             animoji.setPuppetName(name)
         }
@@ -41,6 +42,11 @@ class ViewController: UIViewController {
         return Animoji.puppetNames() as! [String]
     }()
     
+    var fileUrl: URL {
+        let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        return documentsURL.appendingPathComponent("animoji.mov")
+    }
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
@@ -53,19 +59,38 @@ class ViewController: UIViewController {
     }
     
     @IBAction func record(sender: UIButton) {
-        
+        if animoji.recording {
+            animoji.stopRecording()
+        } else {
+            animoji.startRecording()
+        }
     }
     
     @IBAction func preview(sender: UIButton) {
-        
+        if animoji.previewing {
+            previewButton.setImage(#imageLiteral(resourceName: "play"), for: .normal)
+            animoji.stopPreviewing()
+        } else {
+            previewButton.setImage(#imageLiteral(resourceName: "stop-playing"), for: .normal)
+            animoji.startPreviewing()
+        }
     }
     
     @IBAction func delete(sender: UIButton) {
-        
+        animoji.stopPreviewing()
+        animoji.stopRecording()
+        deleteRecording()
     }
     
     @IBAction func share(sender: UIButton) {
-        
+        animoji.exportMovie(toURL: fileUrl, options: nil, completionHandler: { [unowned self] in
+            let viewController = UIActivityViewController(activityItems: [self.fileUrl], applicationActivities: nil)
+            self.present(viewController, animated: true, completion: nil)
+        })
+    }
+    
+    func deleteRecording() {
+        try? FileManager.default.removeItem(at: fileUrl)
     }
     
 }
@@ -87,6 +112,22 @@ extension ViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let name = puppetNames[indexPath.item]
         animoji.setPuppetName(name)
+    }
+}
+
+extension ViewController: AnimojiDelegate {
+    func didFinishPlaying(_ animoji: Animoji) {
+        if !animoji.recording {
+            previewButton.setImage(#imageLiteral(resourceName: "play"), for: .normal)
+        }
+    }
+    func didStartRecording(_ animoji: Animoji) {
+        recordButton.setImage(#imageLiteral(resourceName: "stop-recording"), for: .normal)
+        deleteRecording()
+    }
+    func didStopRecording(_ animoji: Animoji) {
+        recordButton.setImage(#imageLiteral(resourceName: "record"), for: .normal)
+        animoji.startPreviewing()
     }
 }
 
