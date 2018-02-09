@@ -1,5 +1,10 @@
 # Change log
 
+## [Version 0.0.5](https://github.com/efremidze/Animoji/releases/tag/0.0.5)
+Released on 2017-02-08
+
+- Added Recording Support
+
 ## [Version 0.0.4](https://github.com/efremidze/Animoji/releases/tag/0.0.4)
 Released on 2017-02-01
 

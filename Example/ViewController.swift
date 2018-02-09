@@ -28,6 +28,11 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBOutlet weak var recordButton: UIButton!
+    @IBOutlet weak var previewButton: UIButton!
+    @IBOutlet weak var deleteButton: UIButton!
+    @IBOutlet weak var shareButton: UIButton!
+    
     var layout: UICollectionViewFlowLayout {
         return collectionView.collectionViewLayout as! UICollectionViewFlowLayout
     }
@@ -41,6 +46,22 @@ class ViewController: UIViewController {
         let availableWidth = self.view.bounds.width - inset - CGFloat(itemsPerRow - 1) * spacing
         let width = floor(availableWidth / CGFloat(itemsPerRow))
         layout.itemSize = CGSize(width: width, height: width)
+    }
+    
+    @IBAction func record(_ sender: UIButton) {
+        
+    }
+    
+    @IBAction func preview(_ sender: UIButton) {
+        
+    }
+    
+    @IBAction func delete(_ sender: UIButton) {
+        
+    }
+    
+    @IBAction func share(_ sender: UIButton) {
+        
     }
     
 }
