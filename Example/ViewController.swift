@@ -47,6 +47,15 @@ class ViewController: UIViewController {
         return documentsURL.appendingPathComponent("animoji.mov")
     }
     
+    var enableRecording: Bool = true {
+        didSet {
+            recordButton.isHidden = !enableRecording
+            previewButton.isHidden = enableRecording
+            deleteButton.isHidden = enableRecording
+            shareButton.isHidden = enableRecording
+        }
+    }
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
@@ -68,10 +77,8 @@ class ViewController: UIViewController {
     
     @IBAction func preview(sender: UIButton) {
         if animoji.previewing {
-            previewButton.setImage(#imageLiteral(resourceName: "play"), for: .normal)
             animoji.stopPreviewing()
         } else {
-            previewButton.setImage(#imageLiteral(resourceName: "stop-playing"), for: .normal)
             animoji.startPreviewing()
         }
     }
@@ -80,6 +87,7 @@ class ViewController: UIViewController {
         animoji.stopPreviewing()
         animoji.stopRecording()
         deleteRecording()
+        enableRecording = true
     }
     
     @IBAction func share(sender: UIButton) {
@@ -118,16 +126,25 @@ extension ViewController: UICollectionViewDelegate {
 extension ViewController: AnimojiDelegate {
     func didFinishPlaying(_ animoji: Animoji) {
         if !animoji.recording {
-            previewButton.setImage(#imageLiteral(resourceName: "play"), for: .normal)
+            didStopPreviewing(animoji)
         }
     }
     func didStartRecording(_ animoji: Animoji) {
-        recordButton.setImage(#imageLiteral(resourceName: "stop-recording"), for: .normal)
         deleteRecording()
+        enableRecording = true
+        recordButton.setImage(#imageLiteral(resourceName: "stop-recording"), for: .normal)
     }
     func didStopRecording(_ animoji: Animoji) {
-        recordButton.setImage(#imageLiteral(resourceName: "record"), for: .normal)
         animoji.startPreviewing()
+        
+        recordButton.setImage(#imageLiteral(resourceName: "record"), for: .normal)
+    }
+    func didStartPreviewing(_ animoji: Animoji) {
+        enableRecording = false
+        previewButton.setImage(#imageLiteral(resourceName: "stop-playing"), for: .normal)
+    }
+    func didStopPreviewing(_ animoji: Animoji) {
+        previewButton.setImage(#imageLiteral(resourceName: "play"), for: .normal)
     }
 }
 

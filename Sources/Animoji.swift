@@ -13,6 +13,8 @@ public protocol AnimojiDelegate: class {
     func didFinishPlaying(_ animoji: Animoji)
     func didStartRecording(_ animoji: Animoji)
     func didStopRecording(_ animoji: Animoji)
+    func didStartPreviewing(_ animoji: Animoji)
+    func didStopPreviewing(_ animoji: Animoji)
 }
 
 public class Animoji: AnimojiView {
@@ -48,6 +50,18 @@ public class Animoji: AnimojiView {
         super.stopRecording()
         
         animojiDelegate?.didStopRecording(self)
+    }
+    
+    override open func startPreviewing() {
+        super.startPreviewing()
+        
+        animojiDelegate?.didStartPreviewing(self)
+    }
+    
+    override open func stopPreviewing() {
+        super.stopPreviewing()
+        
+        animojiDelegate?.didStopPreviewing(self)
     }
     
 }
