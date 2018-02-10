@@ -31,14 +31,14 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
                                                 <state key="normal" image="play"/>
                                                 <connections>
-                                                    <action selector="preview:" destination="BYZ-38-t0r" eventType="touchUpInside" id="s9a-NF-A7Y"/>
+                                                    <action selector="previewWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Cj5-1R-xYZ"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uOg-X8-2YY">
                                                 <rect key="frame" x="0.0" y="46" width="32" height="32"/>
                                                 <state key="normal" image="delete"/>
                                                 <connections>
-                                                    <action selector="delete:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0N2-IG-3ut"/>
+                                                    <action selector="deleteWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RY7-mg-1bY"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -50,14 +50,14 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="52" height="52"/>
                                                 <state key="normal" image="share"/>
                                                 <connections>
-                                                    <action selector="share:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lIh-38-VIB"/>
+                                                    <action selector="shareWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yUs-xm-UHr"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Lo-66-Ei9">
                                                 <rect key="frame" x="0.0" y="66" width="52" height="52"/>
                                                 <state key="normal" image="record"/>
                                                 <connections>
-                                                    <action selector="record:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hQs-89-Vbe"/>
+                                                    <action selector="recordWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HA5-VY-56P"/>
                                                 </connections>
                                             </button>
                                         </subviews>
