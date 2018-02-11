@@ -112,24 +112,24 @@
     NSMutableData *blendShapeBuffer = [NSMutableData dataWithCapacity: duration * 204];
     NSMutableData *transformData = [NSMutableData dataWithCapacity: duration * 64];
     
-    [self setValue:[NSNumber numberWithInt:duration] forKey:@"_recordingCapacity"];
-    [self setValue:timesBuffer forKey:@"_rawTimesData"];
-    [self setValue:blendShapeBuffer forKey:@"_rawBlendShapesData"];
-    [self setValue:transformData forKey:@"_rawTransformsData"];
+    [self.puppetView setValue:[NSNumber numberWithInt:duration] forKey:@"_recordingCapacity"];
+    [self.puppetView setValue:timesBuffer forKey:@"_rawTimesData"];
+    [self.puppetView setValue:blendShapeBuffer forKey:@"_rawBlendShapesData"];
+    [self.puppetView setValue:transformData forKey:@"_rawTransformsData"];
     
     {
         Ivar ivar = class_getInstanceVariable(NSClassFromString(@"AVTPuppetView"), "_rawTimes");
-        object_setIvar(self, ivar, [timesBuffer mutableBytes]);
+        object_setIvar(self.puppetView, ivar, [timesBuffer mutableBytes]);
     }
     
     {
         Ivar ivar = class_getInstanceVariable(NSClassFromString(@"AVTPuppetView"), "_rawBlendShapes");
-        object_setIvar(self, ivar, [blendShapeBuffer mutableBytes]);
+        object_setIvar(self.puppetView, ivar, [blendShapeBuffer mutableBytes]);
     }
     
     {
         Ivar ivar = class_getInstanceVariable(NSClassFromString(@"AVTPuppetView"), "_rawTransforms");
-        object_setIvar(self, ivar, [transformData mutableBytes]);
+        object_setIvar(self.puppetView, ivar, [transformData mutableBytes]);
     }
 }
 
