@@ -132,7 +132,7 @@ extension ViewController: UICollectionViewDelegate {
 extension ViewController: AnimojiDelegate {
     func didFinishPlaying(_ animoji: Animoji) {
         if !animoji.recording {
-            didStopPreviewing(animoji)
+            animoji.stopPreviewing()
         }
     }
     func didStartRecording(_ animoji: Animoji) {
@@ -142,7 +142,6 @@ extension ViewController: AnimojiDelegate {
     }
     func didStopRecording(_ animoji: Animoji) {
         animoji.startPreviewing()
-        
         recordButton.setImage(#imageLiteral(resourceName: "record"), for: .normal)
     }
     func didStartPreviewing(_ animoji: Animoji) {
