@@ -24,8 +24,6 @@
 
 *Supports iOS 11.3 Animoji (lion, dragon, skull, bear)!*
 
-*Support for recording coming soon!*
-
 *[100% Swift version coming soon!](https://github.com/efremidze/Animoji/tree/develop)*
 
 **Animoji uses iPhone X and iOS 11.1 features so no Simulator support yet.**
@@ -54,17 +52,9 @@ import Animoji
 let animoji = Animoji(frame: self.view.bounds)
 animoji.setPuppet(name: .cat)
 view.addSubview(animoji)
-```
 
-#### iOS 11.3 Support
-
-```swift
-import Animoji
-
-let animoji = Animoji(frame: self.view.bounds)
-// set iOS 11.3 puppet (lion, dragon, skull, bear)
-animoji.setPuppet(name: "dragon")
-view.addSubview(animoji)
+// Supports iOS 11.3 puppets (lion, dragon, skull, bear)
+// animoji.setPuppet(name: "dragon")
 ```
 
 ## Installation
