@@ -9,6 +9,7 @@
 #import "AnimojiView.h"
 #import "AVTPuppetView.h"
 #import "AVTPuppet.h"
+#import <objc/runtime.h>
 
 @interface AnimojiView ()
 
@@ -82,6 +83,82 @@
 + (UIImage *)thumbnailForPuppetNamed:(NSString *)string
 {
     return [NSClassFromString(@"AVTPuppet") thumbnailForPuppetNamed:string options: nil];
+}
+
+- (bool)isPreviewing
+{
+    return self.puppetView.isPreviewing;
+}
+
+- (bool)isRecording
+{
+    return self.puppetView.isRecording;
+}
+
+- (double)maxRecordingDuration
+{
+    return _maxRecordingDuration ? _maxRecordingDuration : 60;
+}
+
+- (void)audioPlayerItemDidReachEnd:(id)arg1
+{
+    [self.puppetView audioPlayerItemDidReachEnd:arg1];
+}
+
+- (bool)exportMovieToURL:(id)arg1 options:(id)arg2 completionHandler:(id /* block */)arg3
+{
+    return [self.puppetView exportMovieToURL:arg1 options:arg2 completionHandler:arg3];
+}
+
+- (double)recordingDuration
+{
+    return self.puppetView.recordingDuration;
+}
+
+- (void)startRecording
+{
+    [self.puppetView startRecording];
+    
+    int duration = self.maxRecordingDuration * 60;
+    
+    NSMutableData *timesBuffer = [NSMutableData dataWithCapacity: duration * 8];
+    NSMutableData *blendShapeBuffer = [NSMutableData dataWithCapacity: duration * 204];
+    NSMutableData *transformData = [NSMutableData dataWithCapacity: duration * 64];
+    
+    [self.puppetView setValue:[NSNumber numberWithInt:duration] forKey:@"_recordingCapacity"];
+    [self.puppetView setValue:timesBuffer forKey:@"_rawTimesData"];
+    [self.puppetView setValue:blendShapeBuffer forKey:@"_rawBlendShapesData"];
+    [self.puppetView setValue:transformData forKey:@"_rawTransformsData"];
+    
+    {
+        Ivar ivar = class_getInstanceVariable(NSClassFromString(@"AVTPuppetView"), "_rawTimes");
+        object_setIvar(self.puppetView, ivar, [timesBuffer mutableBytes]);
+    }
+    
+    {
+        Ivar ivar = class_getInstanceVariable(NSClassFromString(@"AVTPuppetView"), "_rawBlendShapes");
+        object_setIvar(self.puppetView, ivar, [blendShapeBuffer mutableBytes]);
+    }
+    
+    {
+        Ivar ivar = class_getInstanceVariable(NSClassFromString(@"AVTPuppetView"), "_rawTransforms");
+        object_setIvar(self.puppetView, ivar, [transformData mutableBytes]);
+    }
+}
+
+- (void)stopRecording
+{
+    [self.puppetView stopRecording];
+}
+
+- (void)startPreviewing
+{
+    [self.puppetView startPreviewing];
+}
+
+- (void)stopPreviewing
+{
+    [self.puppetView stopPreviewing];
 }
 
 @end

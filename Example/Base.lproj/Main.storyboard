@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,8 +19,51 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1vY-dD-sVr" customClass="Animoji" customModule="Animoji">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="407"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="387"/>
                             </sceneKitView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="9jh-qD-35i">
+                                <rect key="frame" x="309" y="34" width="52" height="359"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="GZd-5T-Pbk">
+                                        <rect key="frame" x="20" y="0.0" width="32" height="78"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AMw-3i-YPa">
+                                                <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
+                                                <state key="normal" image="play"/>
+                                                <connections>
+                                                    <action selector="previewWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Cj5-1R-xYZ"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uOg-X8-2YY">
+                                                <rect key="frame" x="0.0" y="46" width="32" height="32"/>
+                                                <state key="normal" image="delete"/>
+                                                <connections>
+                                                    <action selector="deleteWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RY7-mg-1bY"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="dAm-MW-yF2">
+                                        <rect key="frame" x="0.0" y="241" width="52" height="118"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ddm-SB-hhJ">
+                                                <rect key="frame" x="0.0" y="0.0" width="52" height="52"/>
+                                                <state key="normal" image="share"/>
+                                                <connections>
+                                                    <action selector="shareWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yUs-xm-UHr"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Lo-66-Ei9">
+                                                <rect key="frame" x="0.0" y="66" width="52" height="52"/>
+                                                <state key="normal" image="record"/>
+                                                <connections>
+                                                    <action selector="recordWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HA5-VY-56P"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="BCn-R2-pK3">
                                 <rect key="frame" x="0.0" y="407" width="375" height="260"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -42,12 +85,15 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9jh-qD-35i" secondAttribute="trailing" constant="14" id="3Gh-Ri-43d"/>
                             <constraint firstItem="BCn-R2-pK3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ArI-YE-6D3"/>
+                            <constraint firstItem="1vY-dD-sVr" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Dc9-Yw-oDU"/>
                             <constraint firstItem="BCn-R2-pK3" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="FeJ-fQ-Zmq"/>
                             <constraint firstItem="1vY-dD-sVr" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="JEL-7X-l3F"/>
-                            <constraint firstItem="1vY-dD-sVr" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="WeD-fr-OhG"/>
+                            <constraint firstItem="9jh-qD-35i" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="14" id="PVt-Bd-a5l"/>
                             <constraint firstItem="1vY-dD-sVr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="fdD-ZL-tBP"/>
                             <constraint firstItem="BCn-R2-pK3" firstAttribute="top" secondItem="1vY-dD-sVr" secondAttribute="bottom" id="hmM-D8-S67"/>
+                            <constraint firstItem="BCn-R2-pK3" firstAttribute="top" secondItem="9jh-qD-35i" secondAttribute="bottom" constant="14" id="kBd-ts-yO3"/>
                             <constraint firstItem="BCn-R2-pK3" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="mCs-xj-Px0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -55,6 +101,10 @@
                     <connections>
                         <outlet property="animoji" destination="1vY-dD-sVr" id="VRp-j2-INL"/>
                         <outlet property="collectionView" destination="BCn-R2-pK3" id="GV6-Cm-tG6"/>
+                        <outlet property="deleteButton" destination="uOg-X8-2YY" id="dem-pN-xnZ"/>
+                        <outlet property="previewButton" destination="AMw-3i-YPa" id="dQv-yK-L3f"/>
+                        <outlet property="recordButton" destination="9Lo-66-Ei9" id="QNr-i1-C0H"/>
+                        <outlet property="shareButton" destination="Ddm-SB-hhJ" id="WNI-UD-eHN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -62,4 +112,10 @@
             <point key="canvasLocation" x="136.80000000000001" y="115.59220389805098"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="delete" width="32" height="32"/>
+        <image name="play" width="32" height="32"/>
+        <image name="record" width="52" height="52"/>
+        <image name="share" width="52" height="52"/>
+    </resources>
 </document>
