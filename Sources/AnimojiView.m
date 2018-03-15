@@ -51,6 +51,7 @@
     if (!_puppetView) {
         _puppetView = [[NSClassFromString(@"AVTPuppetView") alloc] initWithFrame:self.bounds];
         _puppetView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+        _puppetView.backgroundColor = UIColor.whiteColor;
         [self addSubview:_puppetView];
     }
     return _puppetView;
@@ -146,6 +147,11 @@
 - (void)stopPreviewing
 {
     [self.puppetView stopPreviewing];
+}
+
+- (UIImage*)snapshotWithSize:(CGSize)size
+{
+    return [self.puppetView snapshotWithSize:size];
 }
 
 @end
