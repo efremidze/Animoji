@@ -269,4 +269,5 @@
 - (void)startRecording;
 - (void)stopPreviewing;
 - (void)stopRecording;
+- (UIImage*)snapshotWithSize:(CGSize)arg1;
 @end

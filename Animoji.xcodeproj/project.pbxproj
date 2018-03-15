@@ -211,7 +211,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0910;
-				LastUpgradeCheck = 0910;
+				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = "Lasha Efremidze";
 				TargetAttributes = {
 					710F670F1FB54D1C0077FBD7 = {

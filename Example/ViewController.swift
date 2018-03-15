@@ -11,10 +11,11 @@ import Animoji
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var puppetView: PuppetView! {
+    @IBOutlet weak var animoji: Animoji! {
         didSet {
-            let item = PuppetItem.all[0]
-            puppetView.avatarInstance = Puppet.puppetNamed(item.rawValue)?.value
+            animoji.animojiDelegate = self
+            let name = puppetNames[0]
+            animoji.setPuppetName(name)
         }
     }
     
@@ -28,8 +29,37 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBOutlet weak var recordButton: UIButton!
+    @IBOutlet weak var previewButton: UIButton!
+    @IBOutlet weak var deleteButton: UIButton!
+    @IBOutlet weak var shareButton: UIButton!
+    
     var layout: UICollectionViewFlowLayout {
         return collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+    }
+    
+    lazy var puppetNames: [String] = {
+        return Animoji.puppetNames() as! [String]
+    }()
+    
+    var fileUrl: URL {
+        let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        return documentsURL.appendingPathComponent("animoji.mov")
+    }
+    
+    var enableRecording: Bool = true {
+        didSet {
+            recordButton.isHidden = !enableRecording
+            previewButton.isHidden = enableRecording
+            deleteButton.isHidden = enableRecording
+            shareButton.isHidden = enableRecording
+        }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        enableRecording = true
     }
     
     override func viewDidLayoutSubviews() {
@@ -43,25 +73,83 @@ class ViewController: UIViewController {
         layout.itemSize = CGSize(width: width, height: width)
     }
     
+    @IBAction func record(sender: UIButton) {
+        if animoji.recording {
+            animoji.stopRecording()
+        } else {
+            animoji.startRecording()
+        }
+    }
+    
+    @IBAction func preview(sender: UIButton) {
+        if animoji.previewing {
+            animoji.stopPreviewing()
+        } else {
+            animoji.startPreviewing()
+        }
+    }
+    
+    @IBAction func delete(sender: UIButton) {
+        animoji.stopPreviewing()
+        animoji.stopRecording()
+        deleteRecording()
+        enableRecording = true
+    }
+    
+    @IBAction func share(sender: UIButton) {
+        animoji.exportMovie(toURL: fileUrl, options: nil, completionHandler: { [unowned self] in
+            let viewController = UIActivityViewController(activityItems: [self.fileUrl], applicationActivities: nil)
+            self.present(viewController, animated: true, completion: nil)
+        })
+    }
+    
+    func deleteRecording() {
+        try? FileManager.default.removeItem(at: fileUrl)
+    }
+    
 }
 
 extension ViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return PuppetItem.all.count
+        return puppetNames.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! Cell
-        let item = PuppetItem.all[indexPath.item]
-        cell.imageView.image = Puppet.thumbnail(forPuppetNamed: item.rawValue)
+        let name = puppetNames[indexPath.item]
+        cell.imageView.image = Animoji.thumbnail(forPuppetNamed: name)
         return cell
     }
 }
 
 extension ViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let item = PuppetItem.all[indexPath.item]
-        puppetView.avatarInstance = Puppet.puppetNamed(item.rawValue)?.value
+        let name = puppetNames[indexPath.item]
+        animoji.setPuppetName(name)
+    }
+}
+
+extension ViewController: AnimojiDelegate {
+    func didFinishPlaying(_ animoji: Animoji) {
+        if !animoji.recording {
+            animoji.stopPreviewing()
+        }
+    }
+    func didStartRecording(_ animoji: Animoji) {
+        deleteRecording()
+        enableRecording = true
+        recordButton.setImage(#imageLiteral(resourceName: "stop-recording"), for: .normal)
+    }
+    func didStopRecording(_ animoji: Animoji) {
+        animoji.startPreviewing()
+        recordButton.setImage(#imageLiteral(resourceName: "record"), for: .normal)
+    }
+    func didStartPreviewing(_ animoji: Animoji) {
+        enableRecording = false
+        previewButton.setImage(#imageLiteral(resourceName: "stop-playing"), for: .normal)
+    }
+    func didStopPreviewing(_ animoji: Animoji) {
+        previewButton.setImage(#imageLiteral(resourceName: "play"), for: .normal)
     }
 }
 
