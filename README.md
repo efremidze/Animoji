@@ -96,6 +96,8 @@ Animoji utilizes Apple's private API to do its magic. Use caution, submitting th
 
 Feel free to submit a PR if you’re using this library in your apps.
 
+- [AnimojiChat](https://github.com/dotEngine/animoji-chat) -- Animoji + video chat  
+
 ## License
 
 Animoji is available under the MIT license. See the LICENSE file for more info.
