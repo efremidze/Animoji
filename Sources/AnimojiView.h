@@ -12,6 +12,7 @@
 @interface AnimojiView : SCNView
 
 - (void)setPuppetName:(NSString *)puppetName;
+- (UIImage *)snapshotWithSize:(CGSize)size;
 + (NSArray *)puppetNames;
 + (UIImage *)thumbnailForPuppetNamed:(NSString *)string;
 

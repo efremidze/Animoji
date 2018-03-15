@@ -63,6 +63,18 @@
     self.puppetView.avatarInstance = (AVTAvatarInstance *)puppet;
 }
 
+- (UIImage *)snapshotWithSize:(CGSize)size
+{
+    if(_puppetView != nil) {
+        UIImage* image = [_puppetView snapshotWithSize:size];
+        if(image != nil){
+            NSLog(@"got image %d %d", (int)image.size.width, (int)image.size.height);
+        }
+        return image;
+    }
+    return nil;
+}
+
 + (NSArray *)puppetNames
 {
     return [NSClassFromString(@"AVTPuppet") puppetNames];

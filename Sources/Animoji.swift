@@ -32,6 +32,11 @@ public class Animoji: AnimojiView {
         setPuppetName(name.rawValue)
     }
     
+    override public func snapshot(with size: CGSize) -> UIImage! {
+        return super.snapshot(with:size)
+    }
+    
+
     public weak var animojiDelegate: AnimojiDelegate?
 
     override open func audioPlayerItemDidReachEnd(_ arg1: Any!) {
@@ -63,5 +68,5 @@ public class Animoji: AnimojiView {
         
         animojiDelegate?.didStopPreviewing(self)
     }
-    
+
 }
