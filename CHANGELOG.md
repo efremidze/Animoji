@@ -1,17 +1,22 @@
 # Change log
 
+## [Version 0.0.7](https://github.com/efremidze/Animoji/releases/tag/0.0.7)
+Released on 2018-03-30
+
+- Swift 4.1 Support
+
 ## [Version 0.0.6](https://github.com/efremidze/Animoji/releases/tag/0.0.6)
-Released on 2017-03-14
+Released on 2018-03-14
 
 - Added Snapshot Support
 
 ## [Version 0.0.5](https://github.com/efremidze/Animoji/releases/tag/0.0.5)
-Released on 2017-02-08
+Released on 2018-02-08
 
 - Added Recording Support
 
 ## [Version 0.0.4](https://github.com/efremidze/Animoji/releases/tag/0.0.4)
-Released on 2017-02-01
+Released on 2018-02-01
 
 - Added iOS 11.3 Support
 
