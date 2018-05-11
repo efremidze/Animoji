@@ -1,6 +1,4 @@
-<p align="center">
-<img src="Images/logo.png" width="890" alt="Animoji" />
-</p>
+![Animoji](https://raw.githubusercontent.com/efremidze/Animoji/master/Images/logo.png)
 
 <p align="center">
 <a href="https://travis-ci.org/efremidze/Animoji" target="_blank">
