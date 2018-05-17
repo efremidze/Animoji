@@ -1,5 +1,10 @@
 # Change log
 
+## [Version 0.0.8](https://github.com/efremidze/Animoji/releases/tag/0.0.8)
+Released on 2018-04-17
+
+- Added documentation
+
 ## [Version 0.0.7](https://github.com/efremidze/Animoji/releases/tag/0.0.7)
 Released on 2018-03-30
 
