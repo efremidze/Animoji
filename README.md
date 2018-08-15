@@ -53,9 +53,6 @@ import Animoji
 let animoji = Animoji(frame: self.view.bounds)
 animoji.setPuppet(name: .cat)
 view.addSubview(animoji)
-
-// Supports iOS 11.3 puppets (lion, dragon, skull, bear)
-// animoji.setPuppet(name: "dragon")
 ```
 
 ## Installation

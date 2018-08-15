@@ -1,5 +1,10 @@
 # Change log
 
+## [Version 0.0.9](https://github.com/efremidze/Animoji/releases/tag/0.0.9)
+Released on 2018-08-15
+
+- Added puppets introduced in iOS 11.3
+
 ## [Version 0.0.8](https://github.com/efremidze/Animoji/releases/tag/0.0.8)
 Released on 2018-04-17
 

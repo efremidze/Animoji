@@ -21,9 +21,13 @@ public class Animoji: AnimojiView {
     public enum PuppetName: String {
         // Generated using AVTPuppet.puppetNames()
         case monkey, robot, cat, dog, alien, fox, poo, pig, panda, rabbit, chicken, unicorn
-        // case lion, dragon, skull, bear
         
-        public static let all: [PuppetName] = [monkey, robot, cat, dog, alien, fox, poo, pig, panda, rabbit, chicken, unicorn]
+        // @available(iOS 11.3, *)
+        case lion, dragon, skull, bear
+        
+        public static var allCases: [PuppetName] {
+            return [monkey, robot, cat, dog, alien, fox, poo, pig, panda, rabbit, chicken, unicorn, lion, dragon, skull, bear]
+        }
     }
     
     public func setPuppet(name: PuppetName) {
