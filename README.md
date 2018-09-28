@@ -27,6 +27,8 @@
 
 *[100% Swift version coming soon!](https://github.com/efremidze/Animoji/tree/develop)*
 
+*[Swift 4.2 Support](https://github.com/efremidze/Animoji/tree/swift-4.2)*
+
 **Animoji uses iPhone X and iOS 11.1 features so no Simulator support yet.**
 
 <img src="https://thumbs.gfycat.com/FlawlessCleverBluejay-size_restricted.gif" width="320">
