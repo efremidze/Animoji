@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		710F67151FB54D1C0077FBD7 /* Animoji.h in Headers */ = {isa = PBXBuildFile; fileRef = 710F67131FB54D1C0077FBD7 /* Animoji.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		712B62BF1FB6B07E00F55487 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 712B62BE1FB6B07E00F55487 /* README.md */; };
+		715446F91FC4E54A00D25B2B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715446F81FC4E54A00D25B2B /* Extensions.swift */; };
+		715446FD1FC516AF00D25B2B /* AVTAvatarInstance.h in Headers */ = {isa = PBXBuildFile; fileRef = 715446FC1FC516AF00D25B2B /* AVTAvatarInstance.h */; };
+		7174A8E61FCCAEDC00D201F9 /* Animoji.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 7174A8E41FCCAEDC00D201F9 /* Animoji.podspec */; };
+		7174A8E71FCCAEDC00D201F9 /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = 7174A8E51FCCAEDC00D201F9 /* CHANGELOG.md */; };
 		718273961FB54E4100635687 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718273951FB54E4100635687 /* AppDelegate.swift */; };
 		718273981FB54E4100635687 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718273971FB54E4100635687 /* ViewController.swift */; };
 		7182739B1FB54E4100635687 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 718273991FB54E4100635687 /* Main.storyboard */; };
@@ -17,8 +21,6 @@
 		718273A51FB54E4A00635687 /* Animoji.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 710F67101FB54D1C0077FBD7 /* Animoji.framework */; };
 		718273A61FB54E4A00635687 /* Animoji.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 710F67101FB54D1C0077FBD7 /* Animoji.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		718273AB1FB54E6000635687 /* Animoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718273AA1FB54E6000635687 /* Animoji.swift */; };
-		71EB037F1FB96D3F00D2A101 /* AnimojiView.h in Headers */ = {isa = PBXBuildFile; fileRef = 71EB037D1FB96D3F00D2A101 /* AnimojiView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		71EB03801FB96D3F00D2A101 /* AnimojiView.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EB037E1FB96D3F00D2A101 /* AnimojiView.m */; };
 		71EB03861FB980DA00D2A101 /* AVTPuppetView.h in Headers */ = {isa = PBXBuildFile; fileRef = 71EB03821FB980DA00D2A101 /* AVTPuppetView.h */; };
 		71EB03871FB980DA00D2A101 /* AVTAvatarView.h in Headers */ = {isa = PBXBuildFile; fileRef = 71EB03831FB980DA00D2A101 /* AVTAvatarView.h */; };
 		71EB03881FB980DA00D2A101 /* AVTPuppet.h in Headers */ = {isa = PBXBuildFile; fileRef = 71EB03841FB980DA00D2A101 /* AVTPuppet.h */; };
@@ -53,6 +55,10 @@
 		710F67131FB54D1C0077FBD7 /* Animoji.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Animoji.h; sourceTree = "<group>"; };
 		710F67141FB54D1C0077FBD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		712B62BE1FB6B07E00F55487 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		715446F81FC4E54A00D25B2B /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		715446FC1FC516AF00D25B2B /* AVTAvatarInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVTAvatarInstance.h; sourceTree = "<group>"; };
+		7174A8E41FCCAEDC00D201F9 /* Animoji.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Animoji.podspec; sourceTree = "<group>"; };
+		7174A8E51FCCAEDC00D201F9 /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		718273931FB54E4100635687 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		718273951FB54E4100635687 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		718273971FB54E4100635687 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -61,8 +67,6 @@
 		7182739F1FB54E4100635687 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		718273A11FB54E4100635687 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		718273AA1FB54E6000635687 /* Animoji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animoji.swift; sourceTree = "<group>"; };
-		71EB037D1FB96D3F00D2A101 /* AnimojiView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnimojiView.h; sourceTree = "<group>"; };
-		71EB037E1FB96D3F00D2A101 /* AnimojiView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AnimojiView.m; sourceTree = "<group>"; };
 		71EB03821FB980DA00D2A101 /* AVTPuppetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVTPuppetView.h; sourceTree = "<group>"; };
 		71EB03831FB980DA00D2A101 /* AVTAvatarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVTAvatarView.h; sourceTree = "<group>"; };
 		71EB03841FB980DA00D2A101 /* AVTPuppet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVTPuppet.h; sourceTree = "<group>"; };
@@ -91,6 +95,8 @@
 			isa = PBXGroup;
 			children = (
 				712B62BE1FB6B07E00F55487 /* README.md */,
+				7174A8E51FCCAEDC00D201F9 /* CHANGELOG.md */,
+				7174A8E41FCCAEDC00D201F9 /* Animoji.podspec */,
 				710F67121FB54D1C0077FBD7 /* Animoji */,
 				718273941FB54E4100635687 /* Example */,
 				710F67111FB54D1C0077FBD7 /* Products */,
@@ -111,8 +117,7 @@
 			children = (
 				710F67131FB54D1C0077FBD7 /* Animoji.h */,
 				718273AA1FB54E6000635687 /* Animoji.swift */,
-				71EB037D1FB96D3F00D2A101 /* AnimojiView.h */,
-				71EB037E1FB96D3F00D2A101 /* AnimojiView.m */,
+				715446F81FC4E54A00D25B2B /* Extensions.swift */,
 				71EB03811FB980DA00D2A101 /* Headers */,
 				710F67141FB54D1C0077FBD7 /* Info.plist */,
 			);
@@ -136,9 +141,10 @@
 		71EB03811FB980DA00D2A101 /* Headers */ = {
 			isa = PBXGroup;
 			children = (
-				71EB03821FB980DA00D2A101 /* AVTPuppetView.h */,
+				715446FC1FC516AF00D25B2B /* AVTAvatarInstance.h */,
 				71EB03831FB980DA00D2A101 /* AVTAvatarView.h */,
 				71EB03841FB980DA00D2A101 /* AVTPuppet.h */,
+				71EB03821FB980DA00D2A101 /* AVTPuppetView.h */,
 			);
 			path = Headers;
 			sourceTree = "<group>";
@@ -152,9 +158,9 @@
 			files = (
 				71EB03861FB980DA00D2A101 /* AVTPuppetView.h in Headers */,
 				71EB03881FB980DA00D2A101 /* AVTPuppet.h in Headers */,
-				71EB037F1FB96D3F00D2A101 /* AnimojiView.h in Headers */,
 				71EB03871FB980DA00D2A101 /* AVTAvatarView.h in Headers */,
 				710F67151FB54D1C0077FBD7 /* Animoji.h in Headers */,
+				715446FD1FC516AF00D25B2B /* AVTAvatarInstance.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,12 +211,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0910;
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "Lasha Efremidze";
 				TargetAttributes = {
 					710F670F1FB54D1C0077FBD7 = {
 						CreatedOnToolsVersion = 9.1;
-						LastSwiftMigration = 0910;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 					};
 					718273921FB54E4100635687 = {
@@ -243,6 +249,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7174A8E61FCCAEDC00D201F9 /* Animoji.podspec in Resources */,
+				7174A8E71FCCAEDC00D201F9 /* CHANGELOG.md in Resources */,
 				712B62BF1FB6B07E00F55487 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -264,8 +272,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				71EB03801FB96D3F00D2A101 /* AnimojiView.m in Sources */,
 				718273AB1FB54E6000635687 /* Animoji.swift in Sources */,
+				715446F91FC4E54A00D25B2B /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,6 +373,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -419,6 +428,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -441,7 +451,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -461,7 +470,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.efremidze.Animoji;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -476,7 +484,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.efremidze.Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -491,7 +498,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.efremidze.Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
