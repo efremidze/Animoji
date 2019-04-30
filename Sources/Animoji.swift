@@ -22,11 +22,33 @@ private class AvatarKit {
     lazy var AKPuppetView = NSClassFromString("AVTPuppetView") as! SCNView.Type
 }
 
-public enum PuppetItem: String {
+public enum PuppetItem: String, CaseIterable {
     // Generated using AVTPuppet.puppetNames()
     case monkey, robot, cat, dog, alien, fox, poo, pig, panda, rabbit, chicken, unicorn
     
-    public static let all: [PuppetItem] = [monkey, robot, cat, dog, alien, fox, poo, pig, panda, rabbit, chicken, unicorn]
+    @available(iOS 11.3, *)
+    case lion, dragon, skull, bear
+
+    @available(iOS 12.0, *)
+    case tiger, koala, trex, ghost
+    
+    @available(iOS 12.2, *)
+    case giraffe, shark, owl, boar
+    
+    public typealias AllCases = [PuppetItem]
+    public static var allCases: AllCases {
+        var cases = [monkey, robot, cat, dog, alien, fox, poo, pig, panda, rabbit, chicken, unicorn]
+        if #available(iOS 11.3, *) {
+            cases += [lion, dragon, skull, bear]
+        }
+        if #available(iOS 12.0, *) {
+            cases += [tiger, koala, trex, ghost]
+        }
+        if #available(iOS 12.2, *) {
+            cases += [giraffe, shark, owl, boar]
+        }
+        return cases
+    }
 }
 
 public class PuppetView: SCNView {
