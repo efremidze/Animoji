@@ -22,6 +22,8 @@
 		71EB03861FB980DA00D2A101 /* AVTPuppetView.h in Headers */ = {isa = PBXBuildFile; fileRef = 71EB03821FB980DA00D2A101 /* AVTPuppetView.h */; };
 		71EB03871FB980DA00D2A101 /* AVTAvatarView.h in Headers */ = {isa = PBXBuildFile; fileRef = 71EB03831FB980DA00D2A101 /* AVTAvatarView.h */; };
 		71EB03881FB980DA00D2A101 /* AVTPuppet.h in Headers */ = {isa = PBXBuildFile; fileRef = 71EB03841FB980DA00D2A101 /* AVTPuppet.h */; };
+		F42E882D2283369200FC58E2 /* Animoji.podspec in Resources */ = {isa = PBXBuildFile; fileRef = F42E882B2283369100FC58E2 /* Animoji.podspec */; };
+		F42E882E2283369200FC58E2 /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = F42E882C2283369200FC58E2 /* CHANGELOG.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +68,8 @@
 		71EB03821FB980DA00D2A101 /* AVTPuppetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVTPuppetView.h; sourceTree = "<group>"; };
 		71EB03831FB980DA00D2A101 /* AVTAvatarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVTAvatarView.h; sourceTree = "<group>"; };
 		71EB03841FB980DA00D2A101 /* AVTPuppet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVTPuppet.h; sourceTree = "<group>"; };
+		F42E882B2283369100FC58E2 /* Animoji.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Animoji.podspec; sourceTree = "<group>"; };
+		F42E882C2283369200FC58E2 /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +95,8 @@
 			isa = PBXGroup;
 			children = (
 				712B62BE1FB6B07E00F55487 /* README.md */,
+				F42E882B2283369100FC58E2 /* Animoji.podspec */,
+				F42E882C2283369200FC58E2 /* CHANGELOG.md */,
 				710F67121FB54D1C0077FBD7 /* Animoji */,
 				718273941FB54E4100635687 /* Example */,
 				710F67111FB54D1C0077FBD7 /* Products */,
@@ -243,6 +249,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F42E882D2283369200FC58E2 /* Animoji.podspec in Resources */,
+				F42E882E2283369200FC58E2 /* CHANGELOG.md in Resources */,
 				712B62BF1FB6B07E00F55487 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -471,7 +479,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = NNRNHY2N8B;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Example/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.efremidze.Example;
@@ -485,7 +493,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = NNRNHY2N8B;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Example/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.efremidze.Example;
