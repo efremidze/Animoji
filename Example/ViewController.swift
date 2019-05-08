@@ -81,7 +81,6 @@ class ViewController: UIViewController {
     
     @IBAction func delete(sender: UIButton) {
 //        animoji.stopPreviewing()
-//        animoji.stopRecording()
         deleteRecording()
         enableRecording = true
     }

@@ -28,10 +28,10 @@ public enum PuppetItem: String, CaseIterable {
     
 //    @available(iOS 11.3, *)
     case lion, dragon, skull, bear
-
+    
 //    @available(iOS 12.0, *)
     case tiger, koala, trex, ghost
-
+    
 //    @available(iOS 12.2, *)
     case giraffe, shark, owl, boar
     
