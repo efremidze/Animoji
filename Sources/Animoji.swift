@@ -26,13 +26,13 @@ public enum PuppetItem: String, CaseIterable {
     // Generated using AVTPuppet.puppetNames()
     case monkey, robot, cat, dog, alien, fox, poo, pig, panda, rabbit, chicken, unicorn
     
-    @available(iOS 11.3, *)
+//    @available(iOS 11.3, *)
     case lion, dragon, skull, bear
 
-    @available(iOS 12.0, *)
+//    @available(iOS 12.0, *)
     case tiger, koala, trex, ghost
-    
-    @available(iOS 12.2, *)
+
+//    @available(iOS 12.2, *)
     case giraffe, shark, owl, boar
     
     public typealias AllCases = [PuppetItem]
@@ -63,9 +63,9 @@ public class PuppetView: SCNView {
         get { return value.value(forKeyPath: "avatarInstance") }
         set { value.setValue(newValue, forKeyPath: "avatarInstance") }
     }
-//    open func setPuppet(_ item: PuppetItem) {
-//        avatarInstance = Puppet.puppetNamed(item.rawValue)
-//    }
+    open func setPuppet(_ item: PuppetItem) {
+        avatarInstance = Puppet.puppetNamed(item.rawValue)?.value
+    }
 }
 
 open class Puppet<T: NSObject> {
