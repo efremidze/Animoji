@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'Animoji'
-  s.version          = '0.0.9'
+  s.version          = '0.0.10'
   s.summary          = 'Animoji'
   s.homepage         = 'https://github.com/efremidze/Animoji'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
@@ -8,5 +8,6 @@ Pod::Spec.new do |s|
   s.documentation_url = 'https://efremidze.github.io/Animoji/'
   s.source           = { :git => 'https://github.com/efremidze/Animoji.git', :tag => s.version.to_s }
   s.ios.deployment_target = '11.1'
+  s.swift_version = '4.2'
   s.source_files = 'Sources/**/*.{swift,h,m}'
 end

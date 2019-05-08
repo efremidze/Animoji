@@ -1,5 +1,10 @@
 # Change log
 
+## [Version 0.0.10](https://github.com/efremidze/Animoji/releases/tag/0.0.10)
+Released on 2019-05-08
+
+- Swift 4.2 Support
+
 ## [Version 0.0.9](https://github.com/efremidze/Animoji/releases/tag/0.0.9)
 Released on 2018-08-15
 

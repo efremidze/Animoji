@@ -22,12 +22,14 @@ public class Animoji: AnimojiView {
         // Generated using AVTPuppet.puppetNames()
         case monkey, robot, cat, dog, alien, fox, poo, pig, panda, rabbit, chicken, unicorn
         
-        // @available(iOS 11.3, *)
+//        @available(iOS 11.3, *)
         case lion, dragon, skull, bear
         
-        public static var allCases: [PuppetName] {
-            return [monkey, robot, cat, dog, alien, fox, poo, pig, panda, rabbit, chicken, unicorn, lion, dragon, skull, bear]
-        }
+//        @available(iOS 12.0, *)
+        case tiger, koala, trex, ghost
+        
+//        @available(iOS 12.2, *)
+        case giraffe, shark, owl, boar
     }
     
     public func setPuppet(name: PuppetName) {
