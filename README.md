@@ -1,33 +1,15 @@
 ![Animoji](https://raw.githubusercontent.com/efremidze/Animoji/master/Images/logo.png)
 
-<p align="center">
-<a href="https://travis-ci.org/efremidze/Animoji" target="_blank">
-<img alt="Build Status" src="https://travis-ci.org/efremidze/Animoji.svg?style=flat">
-</a>
-<a href="https://swift.org" target="_blank">
-<img alt="Language" src="https://img.shields.io/badge/Swift-4-orange.svg?style=flat">
-</a>
-<a href="http://cocoapods.org/pods/Animoji" target="_blank">
-<img alt="Version" src="https://img.shields.io/cocoapods/v/Animoji.svg?style=flat">
-</a>
-<a href="http://cocoapods.org/pods/Animoji" target="_blank">
-<img alt="License" src="https://img.shields.io/cocoapods/l/Animoji.svg?style=flat">
-</a>
-<a href="http://cocoapods.org/pods/Animoji" target="_blank">
-<img alt="Platform" src="https://img.shields.io/cocoapods/p/Animoji.svg?style=flat">
-</a>
-<a href="https://github.com/Carthage/Carthage" target="_blank">
-<img alt="Carthage compatible" src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat">
-</a>
-</p>
+[![Build Status](https://travis-ci.org/efremidze/Animoji.svg?branch=master)](https://travis-ci.org/efremidze/Animoji)
+[![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![Language](https://img.shields.io/badge/Swift-5-orange.svg?style=flat)](https://swift.org)
+[![Version](https://img.shields.io/cocoapods/v/Animoji.svg?style=flat)](http://cocoapods.org/pods/Animoji)
+[![License](https://img.shields.io/cocoapods/l/Animoji.svg?style=flat)](http://cocoapods.org/pods/Animoji)
+[![Platform](https://img.shields.io/cocoapods/p/Animoji.svg?style=flat)](http://cocoapods.org/pods/Animoji)
 
 **Animoji** is an iOS library that gives access to the private framework AvatarKit to generate Animoji, just like the Messages app.
 
-*Supports iOS 11.3 Animoji (lion, dragon, skull, bear)!*
-
-*[100% Swift version coming soon!](https://github.com/efremidze/Animoji/tree/develop)*
-
-*[Swift 4.2 Support](https://github.com/efremidze/Animoji/tree/swift-4.2)*
+*Supports iOS 12.2 Animoji (Boar, Giraffe, Owl, Shark)!*
 
 **Animoji uses iPhone X and iOS 11.1 features so no Simulator support yet.**
 
@@ -43,7 +25,7 @@ $ pod try Animoji
 
 - iOS 11.1+
 - Xcode 9.1+
-- Swift 4
+- Swift 5 (Animoji 1.x), Swift 4 (Animoji 0.x)
 
 ## Usage
 

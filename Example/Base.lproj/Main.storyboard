@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1vY-dD-sVr" customClass="PuppetView" customModule="Animoji">
+                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1vY-dD-sVr" customClass="Animoji" customModule="Animoji">
                                 <rect key="frame" x="0.0" y="20" width="375" height="387"/>
                             </sceneKitView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="9jh-qD-35i">
@@ -99,10 +99,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="animoji" destination="1vY-dD-sVr" id="Qwg-DF-rxv"/>
                         <outlet property="collectionView" destination="BCn-R2-pK3" id="GV6-Cm-tG6"/>
                         <outlet property="deleteButton" destination="uOg-X8-2YY" id="dem-pN-xnZ"/>
                         <outlet property="previewButton" destination="AMw-3i-YPa" id="dQv-yK-L3f"/>
-                        <outlet property="puppetView" destination="1vY-dD-sVr" id="huO-7n-zwp"/>
                         <outlet property="recordButton" destination="9Lo-66-Ei9" id="QNr-i1-C0H"/>
                         <outlet property="shareButton" destination="Ddm-SB-hhJ" id="WNI-UD-eHN"/>
                     </connections>

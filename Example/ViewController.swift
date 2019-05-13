@@ -11,11 +11,11 @@ import Animoji
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var puppetView: PuppetView! {
+    @IBOutlet weak var animoji: Animoji! {
         didSet {
-            guard let item = PuppetItem.allCases.first else { return }
-            puppetView.avatarInstance = Puppet.puppetNamed(item.rawValue)?.value
-//            puppetView.delegate = self
+            animoji.animojiDelegate = self
+            guard let name = puppetNames.first else { return }
+            animoji.setPuppetName(name)
         }
     }
     
@@ -37,6 +37,8 @@ class ViewController: UIViewController {
     var layout: UICollectionViewFlowLayout {
         return collectionView.collectionViewLayout as! UICollectionViewFlowLayout
     }
+    
+    let puppetNames = Puppet.puppetNames()
     
     var fileUrl: URL {
         let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
@@ -70,32 +72,32 @@ class ViewController: UIViewController {
     }
     
     @IBAction func record(sender: UIButton) {
-//        if animoji.recording {
-//            animoji.stopRecording()
-//        } else {
-//            animoji.startRecording()
-//        }
+        if animoji.recording {
+            animoji.stopRecording()
+        } else {
+            animoji.startRecording()
+        }
     }
     
     @IBAction func preview(sender: UIButton) {
-//        if animoji.previewing {
-//            animoji.stopPreviewing()
-//        } else {
-//            animoji.startPreviewing()
-//        }
+        if animoji.previewing {
+            animoji.stopPreviewing()
+        } else {
+            animoji.startPreviewing()
+        }
     }
     
     @IBAction func delete(sender: UIButton) {
-//        animoji.stopPreviewing()
+        animoji.stopPreviewing()
         deleteRecording()
         enableRecording = true
     }
     
     @IBAction func share(sender: UIButton) {
-//        animoji.exportMovie(toURL: fileUrl, options: nil, completionHandler: { [unowned self] in
-//            let viewController = UIActivityViewController(activityItems: [self.fileUrl], applicationActivities: nil)
-//            self.present(viewController, animated: true, completion: nil)
-//        })
+        animoji.exportMovie(toURL: fileUrl, options: nil, completionHandler: { [unowned self] in
+            let viewController = UIActivityViewController(activityItems: [self.fileUrl], applicationActivities: nil)
+            self.present(viewController, animated: true, completion: nil)
+        })
     }
     
     func deleteRecording() {
@@ -106,47 +108,47 @@ class ViewController: UIViewController {
 
 extension ViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return PuppetItem.allCases.count
+        return puppetNames.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! Cell
-        let item = PuppetItem.allCases[indexPath.item]
-        cell.imageView.image = Puppet.thumbnail(forPuppetNamed: item.rawValue)
+        let name = puppetNames[indexPath.item]
+        cell.imageView.image = Animoji.thumbnail(forPuppetNamed: name)
         return cell
     }
 }
 
 extension ViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let item = PuppetItem.allCases[indexPath.item]
-        puppetView.setPuppet(item)
+        let name = puppetNames[indexPath.item]
+        animoji.setPuppetName(name)
     }
 }
 
-//extension ViewController: AnimojiDelegate {
-//    func didFinishPlaying(_ animoji: Animoji) {
-//        if !animoji.recording {
-//            animoji.stopPreviewing()
-//        }
-//    }
-//    func didStartRecording(_ animoji: Animoji) {
-//        deleteRecording()
-//        enableRecording = true
-//        recordButton.setImage(#imageLiteral(resourceName: "stop-recording"), for: .normal)
-//    }
-//    func didStopRecording(_ animoji: Animoji) {
-//        animoji.startPreviewing()
-//        recordButton.setImage(#imageLiteral(resourceName: "record"), for: .normal)
-//    }
-//    func didStartPreviewing(_ animoji: Animoji) {
-//        enableRecording = false
-//        previewButton.setImage(#imageLiteral(resourceName: "stop-playing"), for: .normal)
-//    }
-//    func didStopPreviewing(_ animoji: Animoji) {
-//        previewButton.setImage(#imageLiteral(resourceName: "play"), for: .normal)
-//    }
-//}
+extension ViewController: AnimojiDelegate {
+    func didFinishPlaying(_ animoji: Animoji) {
+        if !animoji.recording {
+            animoji.stopPreviewing()
+        }
+    }
+    func didStartRecording(_ animoji: Animoji) {
+        deleteRecording()
+        enableRecording = true
+        recordButton.setImage(#imageLiteral(resourceName: "stop-recording"), for: .normal)
+    }
+    func didStopRecording(_ animoji: Animoji) {
+        animoji.startPreviewing()
+        recordButton.setImage(#imageLiteral(resourceName: "record"), for: .normal)
+    }
+    func didStartPreviewing(_ animoji: Animoji) {
+        enableRecording = false
+        previewButton.setImage(#imageLiteral(resourceName: "stop-playing"), for: .normal)
+    }
+    func didStopPreviewing(_ animoji: Animoji) {
+        previewButton.setImage(#imageLiteral(resourceName: "play"), for: .normal)
+    }
+}
 
 class Cell: UICollectionViewCell {
     lazy var imageView: UIImageView = { [unowned self] in
