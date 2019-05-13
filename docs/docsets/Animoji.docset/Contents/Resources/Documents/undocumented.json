@@ -1,0 +1,201 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/home/Documents/Animoji/Sources/Animoji.swift",
+      "line": 12,
+      "symbol": "AnimojiDelegate",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/home/Documents/Animoji/Sources/Animoji.swift",
+      "line": 13,
+      "symbol": "AnimojiDelegate.didFinishPlaying(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/home/Documents/Animoji/Sources/Animoji.swift",
+      "line": 14,
+      "symbol": "AnimojiDelegate.didStartRecording(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/home/Documents/Animoji/Sources/Animoji.swift",
+      "line": 15,
+      "symbol": "AnimojiDelegate.didStopRecording(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/home/Documents/Animoji/Sources/Animoji.swift",
+      "line": 16,
+      "symbol": "AnimojiDelegate.didStartPreviewing(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/home/Documents/Animoji/Sources/Animoji.swift",
+      "line": 17,
+      "symbol": "AnimojiDelegate.didStopPreviewing(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/home/Documents/Animoji/Sources/Animoji.swift",
+      "line": 20,
+      "symbol": "Animoji",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/home/Documents/Animoji/Sources/Animoji.swift",
+      "line": 21,
+      "symbol": "Animoji.PuppetName",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/home/Documents/Animoji/Sources/Animoji.swift",
+      "line": 23,
+      "symbol": "Animoji.PuppetName.alien",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/home/Documents/Animoji/Sources/Animoji.swift",
+      "line": 23,
+      "symbol": "Animoji.PuppetName.cat",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/home/Documents/Animoji/Sources/Animoji.swift",
+      "line": 23,
+      "symbol": "Animoji.PuppetName.chicken",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/home/Documents/Animoji/Sources/Animoji.swift",
+      "line": 23,
+      "symbol": "Animoji.PuppetName.dog",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/home/Documents/Animoji/Sources/Animoji.swift",
+      "line": 23,
+      "symbol": "Animoji.PuppetName.fox",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/home/Documents/Animoji/Sources/Animoji.swift",
+      "line": 23,
+      "symbol": "Animoji.PuppetName.monkey",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/home/Documents/Animoji/Sources/Animoji.swift",
+      "line": 23,
+      "symbol": "Animoji.PuppetName.panda",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/home/Documents/Animoji/Sources/Animoji.swift",
+      "line": 23,
+      "symbol": "Animoji.PuppetName.pig",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/home/Documents/Animoji/Sources/Animoji.swift",
+      "line": 23,
+      "symbol": "Animoji.PuppetName.poo",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/home/Documents/Animoji/Sources/Animoji.swift",
+      "line": 23,
+      "symbol": "Animoji.PuppetName.rabbit",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/home/Documents/Animoji/Sources/Animoji.swift",
+      "line": 23,
+      "symbol": "Animoji.PuppetName.robot",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/home/Documents/Animoji/Sources/Animoji.swift",
+      "line": 23,
+      "symbol": "Animoji.PuppetName.unicorn",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/home/Documents/Animoji/Sources/Animoji.swift",
+      "line": 26,
+      "symbol": "Animoji.PuppetName.all",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/home/Documents/Animoji/Sources/Animoji.swift",
+      "line": 29,
+      "symbol": "Animoji.setPuppet(name:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/home/Documents/Animoji/Sources/Animoji.swift",
+      "line": 35,
+      "symbol": "Animoji.animojiDelegate",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/home/Documents/Animoji/Sources/Animoji.swift",
+      "line": 37,
+      "symbol": "Animoji.audioPlayerItemDidReachEnd(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/home/Documents/Animoji/Sources/Animoji.swift",
+      "line": 43,
+      "symbol": "Animoji.startRecording()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/home/Documents/Animoji/Sources/Animoji.swift",
+      "line": 49,
+      "symbol": "Animoji.stopRecording()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/home/Documents/Animoji/Sources/Animoji.swift",
+      "line": 55,
+      "symbol": "Animoji.startPreviewing()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/home/Documents/Animoji/Sources/Animoji.swift",
+      "line": 61,
+      "symbol": "Animoji.stopPreviewing()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/home/Documents/Animoji"
+}

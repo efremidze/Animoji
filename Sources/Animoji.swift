@@ -18,28 +18,14 @@ public protocol AnimojiDelegate: class {
 }
 
 public class Animoji: AnimojiView {
-    public enum PuppetName: String {
-        // Generated using AVTPuppet.puppetNames()
-        case monkey, robot, cat, dog, alien, fox, poo, pig, panda, rabbit, chicken, unicorn
-        
-//        @available(iOS 11.3, *)
-        case lion, dragon, skull, bear
-        
-//        @available(iOS 12.0, *)
-        case tiger, koala, trex, ghost
-        
-//        @available(iOS 12.2, *)
-        case giraffe, shark, owl, boar
-    }
+    public typealias PuppetName = PuppetItem
     
     public func setPuppet(name: PuppetName) {
-//        let puppet = AVTPuppet.puppetNamed(name.rawValue, options: nil)
-//        avatarInstance = puppet as? AVTAvatarInstance
         setPuppetName(name.rawValue)
     }
     
     public weak var animojiDelegate: AnimojiDelegate?
-
+    
     override open func audioPlayerItemDidReachEnd(_ arg1: Any!) {
         super.audioPlayerItemDidReachEnd(arg1)
         
@@ -69,5 +55,4 @@ public class Animoji: AnimojiView {
         
         animojiDelegate?.didStopPreviewing(self)
     }
-    
 }

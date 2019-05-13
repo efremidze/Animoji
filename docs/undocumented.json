@@ -53,147 +53,315 @@
       "file": "/Users/home/Documents/Animoji/Sources/Animoji.swift",
       "line": 21,
       "symbol": "Animoji.PuppetName",
-      "symbol_kind": "source.lang.swift.decl.enum",
+      "symbol_kind": "source.lang.swift.decl.typealias",
       "warning": "undocumented"
     },
     {
       "file": "/Users/home/Documents/Animoji/Sources/Animoji.swift",
       "line": 23,
-      "symbol": "Animoji.PuppetName.alien",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/home/Documents/Animoji/Sources/Animoji.swift",
-      "line": 23,
-      "symbol": "Animoji.PuppetName.cat",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/home/Documents/Animoji/Sources/Animoji.swift",
-      "line": 23,
-      "symbol": "Animoji.PuppetName.chicken",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/home/Documents/Animoji/Sources/Animoji.swift",
-      "line": 23,
-      "symbol": "Animoji.PuppetName.dog",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/home/Documents/Animoji/Sources/Animoji.swift",
-      "line": 23,
-      "symbol": "Animoji.PuppetName.fox",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/home/Documents/Animoji/Sources/Animoji.swift",
-      "line": 23,
-      "symbol": "Animoji.PuppetName.monkey",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/home/Documents/Animoji/Sources/Animoji.swift",
-      "line": 23,
-      "symbol": "Animoji.PuppetName.panda",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/home/Documents/Animoji/Sources/Animoji.swift",
-      "line": 23,
-      "symbol": "Animoji.PuppetName.pig",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/home/Documents/Animoji/Sources/Animoji.swift",
-      "line": 23,
-      "symbol": "Animoji.PuppetName.poo",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/home/Documents/Animoji/Sources/Animoji.swift",
-      "line": 23,
-      "symbol": "Animoji.PuppetName.rabbit",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/home/Documents/Animoji/Sources/Animoji.swift",
-      "line": 23,
-      "symbol": "Animoji.PuppetName.robot",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/home/Documents/Animoji/Sources/Animoji.swift",
-      "line": 23,
-      "symbol": "Animoji.PuppetName.unicorn",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/home/Documents/Animoji/Sources/Animoji.swift",
-      "line": 26,
-      "symbol": "Animoji.PuppetName.all",
-      "symbol_kind": "source.lang.swift.decl.var.static",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/home/Documents/Animoji/Sources/Animoji.swift",
-      "line": 29,
       "symbol": "Animoji.setPuppet(name:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/home/Documents/Animoji/Sources/Animoji.swift",
-      "line": 35,
+      "line": 27,
       "symbol": "Animoji.animojiDelegate",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/home/Documents/Animoji/Sources/Animoji.swift",
-      "line": 37,
+      "line": 29,
       "symbol": "Animoji.audioPlayerItemDidReachEnd(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/home/Documents/Animoji/Sources/Animoji.swift",
-      "line": 43,
+      "line": 35,
       "symbol": "Animoji.startRecording()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/home/Documents/Animoji/Sources/Animoji.swift",
-      "line": 49,
+      "line": 41,
       "symbol": "Animoji.stopRecording()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/home/Documents/Animoji/Sources/Animoji.swift",
-      "line": 55,
+      "line": 47,
       "symbol": "Animoji.startPreviewing()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/home/Documents/Animoji/Sources/Animoji.swift",
-      "line": 61,
+      "line": 53,
       "symbol": "Animoji.stopPreviewing()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/home/Documents/Animoji/Sources/AvatarKit.swift",
+      "line": 25,
+      "symbol": "PuppetItem",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/home/Documents/Animoji/Sources/AvatarKit.swift",
+      "line": 27,
+      "symbol": "PuppetItem.alien",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/home/Documents/Animoji/Sources/AvatarKit.swift",
+      "line": 27,
+      "symbol": "PuppetItem.cat",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/home/Documents/Animoji/Sources/AvatarKit.swift",
+      "line": 27,
+      "symbol": "PuppetItem.chicken",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/home/Documents/Animoji/Sources/AvatarKit.swift",
+      "line": 27,
+      "symbol": "PuppetItem.dog",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/home/Documents/Animoji/Sources/AvatarKit.swift",
+      "line": 27,
+      "symbol": "PuppetItem.fox",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/home/Documents/Animoji/Sources/AvatarKit.swift",
+      "line": 27,
+      "symbol": "PuppetItem.monkey",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/home/Documents/Animoji/Sources/AvatarKit.swift",
+      "line": 27,
+      "symbol": "PuppetItem.panda",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/home/Documents/Animoji/Sources/AvatarKit.swift",
+      "line": 27,
+      "symbol": "PuppetItem.pig",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/home/Documents/Animoji/Sources/AvatarKit.swift",
+      "line": 27,
+      "symbol": "PuppetItem.poo",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/home/Documents/Animoji/Sources/AvatarKit.swift",
+      "line": 27,
+      "symbol": "PuppetItem.rabbit",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/home/Documents/Animoji/Sources/AvatarKit.swift",
+      "line": 27,
+      "symbol": "PuppetItem.robot",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/home/Documents/Animoji/Sources/AvatarKit.swift",
+      "line": 27,
+      "symbol": "PuppetItem.unicorn",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/home/Documents/Animoji/Sources/AvatarKit.swift",
+      "line": 30,
+      "symbol": "PuppetItem.bear",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/home/Documents/Animoji/Sources/AvatarKit.swift",
+      "line": 30,
+      "symbol": "PuppetItem.dragon",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/home/Documents/Animoji/Sources/AvatarKit.swift",
+      "line": 30,
+      "symbol": "PuppetItem.lion",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/home/Documents/Animoji/Sources/AvatarKit.swift",
+      "line": 30,
+      "symbol": "PuppetItem.skull",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/home/Documents/Animoji/Sources/AvatarKit.swift",
+      "line": 33,
+      "symbol": "PuppetItem.ghost",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/home/Documents/Animoji/Sources/AvatarKit.swift",
+      "line": 33,
+      "symbol": "PuppetItem.koala",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/home/Documents/Animoji/Sources/AvatarKit.swift",
+      "line": 33,
+      "symbol": "PuppetItem.tiger",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/home/Documents/Animoji/Sources/AvatarKit.swift",
+      "line": 33,
+      "symbol": "PuppetItem.trex",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/home/Documents/Animoji/Sources/AvatarKit.swift",
+      "line": 36,
+      "symbol": "PuppetItem.boar",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/home/Documents/Animoji/Sources/AvatarKit.swift",
+      "line": 36,
+      "symbol": "PuppetItem.giraffe",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/home/Documents/Animoji/Sources/AvatarKit.swift",
+      "line": 36,
+      "symbol": "PuppetItem.owl",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/home/Documents/Animoji/Sources/AvatarKit.swift",
+      "line": 36,
+      "symbol": "PuppetItem.shark",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/home/Documents/Animoji/Sources/AvatarKit.swift",
+      "line": 54,
+      "symbol": "PuppetView",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/home/Documents/Animoji/Sources/AvatarKit.swift",
+      "line": 55,
+      "symbol": "PuppetView.value",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/home/Documents/Animoji/Sources/AvatarKit.swift",
+      "line": 62,
+      "symbol": "PuppetView.avatarInstance",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/home/Documents/Animoji/Sources/AvatarKit.swift",
+      "line": 66,
+      "symbol": "PuppetView.setPuppet(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/home/Documents/Animoji/Sources/AvatarKit.swift",
+      "line": 71,
+      "symbol": "Puppet",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/home/Documents/Animoji/Sources/AvatarKit.swift",
+      "line": 72,
+      "symbol": "Puppet.value",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/home/Documents/Animoji/Sources/AvatarKit.swift",
+      "line": 73,
+      "symbol": "Puppet.init(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/home/Documents/Animoji/Sources/AvatarKit.swift",
+      "line": 76,
+      "symbol": "Puppet.avatarNode",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/home/Documents/Animoji/Sources/AvatarKit.swift",
+      "line": 79,
+      "symbol": "Puppet.lightingNode",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/home/Documents/Animoji/Sources/AvatarKit.swift",
+      "line": 82,
+      "symbol": "Puppet.puppetNamed(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/home/Documents/Animoji/Sources/AvatarKit.swift",
+      "line": 85,
+      "symbol": "Puppet.puppetNames()",
+      "symbol_kind": "source.lang.swift.decl.function.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/home/Documents/Animoji/Sources/AvatarKit.swift",
+      "line": 88,
+      "symbol": "Puppet.thumbnail(forPuppetNamed:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.class",
       "warning": "undocumented"
     }
   ],

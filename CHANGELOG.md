@@ -1,5 +1,10 @@
 # Change log
 
+## [Version 1.0.0](https://github.com/efremidze/Animoji/releases/tag/1.0.0)
+Released on 2019-05-11
+
+- Swift 5.0 Support
+
 ## [Version 0.0.10](https://github.com/efremidze/Animoji/releases/tag/0.0.10)
 Released on 2019-05-08
 

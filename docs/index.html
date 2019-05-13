@@ -13,7 +13,7 @@
     <a title="Animoji  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html">Animoji Docs</a> (0% documented)</p>
+        <p><a href="index.html">Animoji Docs</a> (3% documented)</p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -33,7 +33,18 @@
                 <a href="Classes/Animoji.html">Animoji</a>
               </li>
               <li class="nav-group-task">
-                <a href="Classes/Animoji/PuppetName.html">– PuppetName</a>
+                <a href="Classes/Puppet.html">Puppet</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/PuppetView.html">PuppetView</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Enums/PuppetItem.html">PuppetItem</a>
               </li>
             </ul>
           </li>
@@ -53,32 +64,16 @@
             
             <p><img src="https://raw.githubusercontent.com/efremidze/Animoji/master/Images/logo.png" alt="Animoji"></p>
 
-<p align="center">
-<a href="https://travis-ci.org/efremidze/Animoji" target="_blank">
-<img alt="Build Status" src="https://travis-ci.org/efremidze/Animoji.svg?style=flat">
-</a>
-<a href="https://swift.org" target="_blank">
-<img alt="Language" src="https://img.shields.io/badge/Swift-4-orange.svg?style=flat">
-</a>
-<a href="http://cocoapods.org/pods/Animoji" target="_blank">
-<img alt="Version" src="https://img.shields.io/cocoapods/v/Animoji.svg?style=flat">
-</a>
-<a href="http://cocoapods.org/pods/Animoji" target="_blank">
-<img alt="License" src="https://img.shields.io/cocoapods/l/Animoji.svg?style=flat">
-</a>
-<a href="http://cocoapods.org/pods/Animoji" target="_blank">
-<img alt="Platform" src="https://img.shields.io/cocoapods/p/Animoji.svg?style=flat">
-</a>
-<a href="https://github.com/Carthage/Carthage" target="_blank">
-<img alt="Carthage compatible" src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat">
-</a>
-</p>
+<p><a href="https://travis-ci.org/efremidze/Animoji"><img src="https://travis-ci.org/efremidze/Animoji.svg?branch=master" alt="Build Status"></a>
+<a href="https://github.com/Carthage/Carthage"><img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat" alt="Carthage Compatible"></a>
+<a href="https://swift.org"><img src="https://img.shields.io/badge/Swift-5-orange.svg?style=flat" alt="Language"></a>
+<a href="http://cocoapods.org/pods/Animoji"><img src="https://img.shields.io/cocoapods/v/Animoji.svg?style=flat" alt="Version"></a>
+<a href="http://cocoapods.org/pods/Animoji"><img src="https://img.shields.io/cocoapods/l/Animoji.svg?style=flat" alt="License"></a>
+<a href="http://cocoapods.org/pods/Animoji"><img src="https://img.shields.io/cocoapods/p/Animoji.svg?style=flat" alt="Platform"></a></p>
 
 <p><strong>Animoji</strong> is an iOS library that gives access to the private framework AvatarKit to generate Animoji, just like the Messages app.</p>
 
-<p><em>Supports iOS 11.3 Animoji (lion, dragon, skull, bear)!</em></p>
-
-<p><em><a href="https://github.com/efremidze/Animoji/tree/develop">100% Swift version coming soon!</a></em></p>
+<p><em>Supports iOS 12.2 Animoji (Boar, Giraffe, Owl, Shark)!</em></p>
 
 <p><strong>Animoji uses iPhone X and iOS 11.1 features so no Simulator support yet.</strong></p>
 
@@ -92,7 +87,7 @@
 <ul>
 <li>iOS 11.1+</li>
 <li>Xcode 9.1+</li>
-<li>Swift 4</li>
+<li>Swift 5 (Animoji 1.x), Swift 4 (Animoji 0.x)</li>
 </ul>
 <h2 id='usage' class='heading'>Usage</h2>
 
@@ -102,9 +97,6 @@
 <span class="k">let</span> <span class="nv">animoji</span> <span class="o">=</span> <span class="kt">Animoji</span><span class="p">(</span><span class="nv">frame</span><span class="p">:</span> <span class="k">self</span><span class="o">.</span><span class="n">view</span><span class="o">.</span><span class="n">bounds</span><span class="p">)</span>
 <span class="n">animoji</span><span class="o">.</span><span class="nf">setPuppet</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="o">.</span><span class="n">cat</span><span class="p">)</span>
 <span class="n">view</span><span class="o">.</span><span class="nf">addSubview</span><span class="p">(</span><span class="n">animoji</span><span class="p">)</span>
-
-<span class="c1">// Supports iOS 11.3 puppets (lion, dragon, skull, bear)</span>
-<span class="c1">// animoji.setPuppet(name: "dragon")</span>
 </code></pre>
 <h2 id='installation' class='heading'>Installation</h2>
 
@@ -153,8 +145,8 @@
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2018 <a class="link" href="https://github.com/efremidze/Animoji" target="_blank" rel="external">efremidze</a>. All rights reserved. (Last updated: 2018-05-17)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.2</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2019 <a class="link" href="https://github.com/efremidze/Animoji" target="_blank" rel="external">efremidze</a>. All rights reserved. (Last updated: 2019-05-13)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.4</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>

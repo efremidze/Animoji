@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var animoji: Animoji! {
         didSet {
             animoji.animojiDelegate = self
-            let name = puppetNames[0]
+            guard let name = puppetNames.first else { return }
             animoji.setPuppetName(name)
         }
     }
@@ -38,9 +38,7 @@ class ViewController: UIViewController {
         return collectionView.collectionViewLayout as! UICollectionViewFlowLayout
     }
     
-    lazy var puppetNames: [String] = {
-        return Animoji.puppetNames() as! [String]
-    }()
+    let puppetNames = Puppet.puppetNames()
     
     var fileUrl: URL {
         let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
