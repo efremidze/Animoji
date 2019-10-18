@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'Animoji'
-  s.version          = '1.0.0'
+  s.version          = '1.0.1'
   s.summary          = 'Animoji'
   s.homepage         = 'https://github.com/efremidze/Animoji'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }

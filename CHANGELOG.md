@@ -1,5 +1,10 @@
 # Change log
 
+## [Version 1.0.1](https://github.com/efremidze/Animoji/releases/tag/1.0.1)
+Released on 2019-10-17
+
+- SPM Support
+
 ## [Version 1.0.0](https://github.com/efremidze/Animoji/releases/tag/1.0.0)
 Released on 2019-05-11
 
