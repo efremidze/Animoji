@@ -7,13 +7,13 @@
 //
 
 #import "AnimojiView.h"
-#import "AVTPuppetView.h"
-#import "AVTPuppet.h"
+#import "AVTRecordView.h"
+#import "AVTAnimoji.h"
 #import <objc/runtime.h>
 
 @interface AnimojiView ()
 
-@property (readwrite, nonatomic, strong) AVTPuppetView *puppetView;
+@property (readwrite, nonatomic, strong) AVTRecordView *puppetView;
 
 @end
 
@@ -46,10 +46,10 @@
     }
 }
 
-- (AVTPuppetView *)puppetView
+- (AVTRecordView *)puppetView
 {
     if (!_puppetView) {
-        _puppetView = [[NSClassFromString(@"AVTPuppetView") alloc] initWithFrame:self.bounds];
+        _puppetView = [[NSClassFromString(@"AVTRecordView") alloc] initWithFrame:self.bounds];
         _puppetView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         _puppetView.backgroundColor = UIColor.whiteColor;
         [self addSubview:_puppetView];
@@ -59,18 +59,18 @@
 
 - (void)setPuppetName:(NSString *)puppetName
 {
-    AVTPuppet *puppet = [NSClassFromString(@"AVTPuppet") puppetNamed:puppetName options:nil];
-    self.puppetView.avatarInstance = (AVTAvatarInstance *)puppet;
+    AVTAnimoji *puppet = [NSClassFromString(@"AVTAnimoji") animojiNamed:puppetName];
+    self.puppetView.avatar = (AVTAvatar *)puppet;
 }
 
 + (NSArray *)puppetNames
 {
-    return [NSClassFromString(@"AVTPuppet") puppetNames];
+    return [NSClassFromString(@"AVTAnimoji") animojiNames];
 }
 
 + (UIImage *)thumbnailForPuppetNamed:(NSString *)string
 {
-    return [NSClassFromString(@"AVTPuppet") thumbnailForPuppetNamed:string options: nil];
+    return [NSClassFromString(@"AVTAnimoji") thumbnailForAnimojiNamed:string options:nil];
 }
 
 - (bool)isPreviewing
@@ -119,17 +119,17 @@
     [self.puppetView setValue:transformData forKey:@"_rawTransformsData"];
     
     {
-        Ivar ivar = class_getInstanceVariable(NSClassFromString(@"AVTPuppetView"), "_rawTimes");
+        Ivar ivar = class_getInstanceVariable(NSClassFromString(@"AVTRecordView"), "_rawTimes");
         object_setIvar(self.puppetView, ivar, [timesBuffer mutableBytes]);
     }
     
     {
-        Ivar ivar = class_getInstanceVariable(NSClassFromString(@"AVTPuppetView"), "_rawBlendShapes");
+        Ivar ivar = class_getInstanceVariable(NSClassFromString(@"AVTRecordView"), "_rawBlendShapes");
         object_setIvar(self.puppetView, ivar, [blendShapeBuffer mutableBytes]);
     }
     
     {
-        Ivar ivar = class_getInstanceVariable(NSClassFromString(@"AVTPuppetView"), "_rawTransforms");
+        Ivar ivar = class_getInstanceVariable(NSClassFromString(@"AVTRecordView"), "_rawTransforms");
         object_setIvar(self.puppetView, ivar, [transformData mutableBytes]);
     }
 }
@@ -147,11 +147,6 @@
 - (void)stopPreviewing
 {
     [self.puppetView stopPreviewing];
-}
-
-- (UIImage*)snapshotWithSize:(CGSize)size
-{
-    return [self.puppetView snapshotWithSize:size];
 }
 
 @end
