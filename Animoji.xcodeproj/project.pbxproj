@@ -76,6 +76,10 @@
 		F42E882C2283369200FC58E2 /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		F43BF3FE22850CB30081B0F9 /* Animoji.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animoji.swift; sourceTree = "<group>"; };
 		F43D213C228342F000EAA24E /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		F4539DD4241F4E8100664A06 /* AVTAnimoji.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AVTAnimoji.h; sourceTree = "<group>"; };
+		F4539DD5241F4EFD00664A06 /* AVTView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AVTView.h; sourceTree = "<group>"; };
+		F4539DD6241F4F4900664A06 /* AVTAvatar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AVTAvatar.h; sourceTree = "<group>"; };
+		F4539DD7241F4FB600664A06 /* AVTRecordView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AVTRecordView.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,10 +154,14 @@
 		71EB03811FB980DA00D2A101 /* Headers */ = {
 			isa = PBXGroup;
 			children = (
+				F4539DD4241F4E8100664A06 /* AVTAnimoji.h */,
+				F4539DD6241F4F4900664A06 /* AVTAvatar.h */,
 				715446FC1FC516AF00D25B2B /* AVTAvatarInstance.h */,
-				71EB03821FB980DA00D2A101 /* AVTPuppetView.h */,
 				71EB03831FB980DA00D2A101 /* AVTAvatarView.h */,
 				71EB03841FB980DA00D2A101 /* AVTPuppet.h */,
+				71EB03821FB980DA00D2A101 /* AVTPuppetView.h */,
+				F4539DD7241F4FB600664A06 /* AVTRecordView.h */,
+				F4539DD5241F4EFD00664A06 /* AVTView.h */,
 			);
 			path = Headers;
 			sourceTree = "<group>";
