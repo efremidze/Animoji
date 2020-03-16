@@ -9,8 +9,8 @@
 import Foundation
 import SceneKit
 
-let AKPuppet = AvatarKit.shared.AKPuppet
-let AKPuppetView = AvatarKit.shared.AKPuppetView
+let AKAnimoji = AvatarKit.shared.AKAnimoji
+let AKRecordView = AvatarKit.shared.AKRecordView
 
 private class AvatarKit {
     static let shared = AvatarKit()
@@ -18,12 +18,12 @@ private class AvatarKit {
         let bundle = Bundle(path: "/System/Library/PrivateFrameworks/AvatarKit.framework")!
         assert(bundle.load())
     }
-    lazy var AKPuppet = NSClassFromString("AVTPuppet") as! NSObject.Type
-    lazy var AKPuppetView = NSClassFromString("AVTPuppetView") as! SCNView.Type
+    lazy var AKAnimoji = NSClassFromString("AVTAnimoji") as! NSObject.Type
+    lazy var AKRecordView = NSClassFromString("AVTRecordView") as! SCNView.Type
 }
 
 public enum PuppetItem: String, CaseIterable {
-    // Generated using AVTPuppet.puppetNames()
+    // Generated using AVTAnimoji.animojiNames
     case monkey, robot, cat, dog, alien, fox, poo, pig, panda, rabbit, chicken, unicorn
     
 //    @available(iOS 11.3, *)
@@ -53,18 +53,18 @@ public enum PuppetItem: String, CaseIterable {
 
 public class PuppetView: SCNView {
     open lazy var value: SCNView = { [unowned self] in
-        let object = AKPuppetView.init()
+        let object = AKRecordView.init()
         object.frame = self.bounds
         object.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.addSubview(object)
         return object
     }()
-    open var avatarInstance: Any? {
-        get { return value.value(forKeyPath: "avatarInstance") }
-        set { value.setValue(newValue, forKeyPath: "avatarInstance") }
+    open var avatar: Any? {
+        get { return value.value(forKeyPath: "avatar") }
+        set { value.setValue(newValue, forKeyPath: "avatar") }
     }
     open func setPuppet(_ item: PuppetItem) {
-        avatarInstance = Puppet.puppetNamed(item.rawValue)?.value
+        avatar = Puppet.puppetNamed(item.rawValue)?.value
     }
 }
 
@@ -80,12 +80,12 @@ open class Puppet<T: NSObject> {
         return value._value(forKeyPath: "lightingNode")
     }
     open class func puppetNamed(_ name: String) -> Puppet<T>? {
-        return (extractMethod(AKPuppet, Selector(("puppetNamed:options:")), name, nil) as? T).map { Puppet($0) }
+        return (extractMethod(AKAnimoji, Selector(("animojiNamed:")), name) as? T).map { Puppet($0) }
     }
     open class func puppetNames() -> [String] {
-        return AKPuppet.value(forKeyPath: "puppetNames") as! [String]
+        return AKAnimoji.value(forKeyPath: "animojiNames") as! [String]
     }
     open class func thumbnail(forPuppetNamed name: String) -> UIImage? {
-        return extractMethod(AKPuppet, Selector(("thumbnailForPuppetNamed:options:")), name, nil) as? UIImage
+        return extractMethod(AKAnimoji, Selector(("thumbnailForAnimojiNamed:options:")), name, nil) as? UIImage
     }
 }

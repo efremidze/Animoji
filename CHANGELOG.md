@@ -1,5 +1,10 @@
 # Change log
 
+## [Version 1.1.0](https://github.com/efremidze/Animoji/releases/tag/1.1.0)
+Released on 2020-03-15
+
+- iOS 13 Support
+
 ## [Version 1.0.2](https://github.com/efremidze/Animoji/releases/tag/1.0.2)
 Released on 2019-10-25
 
