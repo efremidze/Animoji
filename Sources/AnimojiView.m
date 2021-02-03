@@ -51,7 +51,7 @@
     if (!_puppetView) {
         _puppetView = [[NSClassFromString(@"AVTRecordView") alloc] initWithFrame:self.bounds];
         _puppetView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-        _puppetView.backgroundColor = UIColor.whiteColor;
+        _puppetView.backgroundColor = UIColor.clearColor;
         [self addSubview:_puppetView];
     }
     return _puppetView;
