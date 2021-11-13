@@ -12,14 +12,19 @@ import SceneKit
 let AKAnimoji = AvatarKit.shared.AKAnimoji
 let AKRecordView = AvatarKit.shared.AKRecordView
 
-private class AvatarKit {
-    static let shared = AvatarKit()
+public class AvatarKit {
+    public static let shared = AvatarKit()
     init() {
-        let bundle = Bundle(path: "/System/Library/PrivateFrameworks/AvatarKit.framework")!
-        assert(bundle.load())
+        [Bundle.AvatarKit, Bundle.AvatarUI].forEach { assert($0.load()) }
     }
     lazy var AKAnimoji = NSClassFromString("AVTAnimoji") as! NSObject.Type
     lazy var AKRecordView = NSClassFromString("AVTRecordView") as! SCNView.Type
+    
+    public lazy var AVTAvatarEditorViewController = NSClassFromString("AVTAvatarEditorViewController") as! NSObject.Type
+    public lazy var AVTAvatarRecordDataSource = NSClassFromString("AVTAvatarRecordDataSource") as! NSObject.Type
+    public lazy var AVTCarouselController = NSClassFromString("AVTCarouselController") as! UIViewController.Type
+    public lazy var AVTUIEnvironment = NSClassFromString("AVTUIEnvironment") as! NSObject.Type
+    public lazy var AVTSplashScreenViewController = NSClassFromString("AVTSplashScreenViewController") as! UIViewController.Type
 }
 
 public enum PuppetItem: String, CaseIterable {

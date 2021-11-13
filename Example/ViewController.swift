@@ -13,9 +13,10 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var animoji: Animoji! {
         didSet {
-            animoji.animojiDelegate = self
-            guard let name = puppetNames.first else { return }
-            animoji.setPuppetName(name)
+//            animoji.animojiDelegate = self
+//            guard let name = puppetNames.first else { return }
+//            animoji.setPuppetName(name)
+            animoji.isHidden = true
         }
     }
     
@@ -72,11 +73,16 @@ class ViewController: UIViewController {
     }
     
     @IBAction func record(sender: UIButton) {
-        if animoji.recording {
-            animoji.stopRecording()
-        } else {
-            animoji.startRecording()
-        }
+//        let vc = AvatarKit.shared.AVTSplashScreenViewController.init()
+        let vc = MemojiViewController()
+        vc.modalPresentationStyle = .overFullScreen
+        self.present(vc, animated: true)
+        
+//        if animoji.recording {
+//            animoji.stopRecording()
+//        } else {
+//            animoji.startRecording()
+//        }
     }
     
     @IBAction func preview(sender: UIButton) {
@@ -157,4 +163,113 @@ class Cell: UICollectionViewCell {
         self.contentView.addSubview(imageView)
         return imageView
     }()
+}
+
+// https://worthdoingbadly.com/memoji/
+
+class MemojiViewController: UIViewController {
+    private var carouselSource: NSObject?
+    private var carouselView: UIView?
+    
+    lazy var carouselController: UIViewController = {
+        [Bundle.AvatarKit, Bundle.AvatarUI].forEach { assert($0.load()) }
+        hookMethods()
+        let source = extractMethod(AvatarKit.shared.AVTAvatarRecordDataSource, Selector(("defaultUIDataSourceWithDomainIdentifier:")), Bundle.main.bundleIdentifier) as! NSObject
+        let controller = extractMethod(AvatarKit.shared.AVTCarouselController, Selector(("recordingCarouselForRecordDataSource:")), source) as! UIViewController
+        controller.setValue(self, forKey: "presenterDelegate")
+        let view = controller.value(forKeyPath: "view") as! UIView
+        view.frame = self.view.bounds
+        self.view.addSubview(view)
+        self.carouselSource = source
+        self.carouselView = view
+        return controller
+    }()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.view.backgroundColor = UIColor.white
+        
+        _ = carouselController
+    }
+    
+    @objc func presentAvatarUIController(_ presentation: NSObject, animated: Bool) {
+        self.present(presentation.value(forKey: "controller") as! UIViewController, animated: animated)
+    }
+    @objc func dismissAvatarUIControllerAnimated(_ animated: Bool) {
+        self.dismiss(animated: animated)
+    }
+}
+
+typealias BundleForClass_Type = @convention(c) (AnyClass, Selector, AnyClass) -> Bundle
+private var NSBundle_bundleForClass_real:BundleForClass_Type!
+private func NSBundle_bundleForClass_hook(bundleClass: AnyClass, selector: Selector, classToGet:AnyClass) -> Bundle {
+//    if let execNameCStr = class_getImageName(classToGet) {
+//        let execName = String(cString: execNameCStr)
+//        if execName == "/System/Library/PrivateFrameworks/AvatarUI.framework/AvatarUI" {
+//            let url = Bundle.main.url(forResource: "AvatarUI", withExtension: "framework")!
+//            return Bundle(url: url)!
+//        }
+//        if execName == "/System/Library/PrivateFrameworks/AvatarKit.framework/AvatarKit" {
+//            let url = Bundle.main.url(forResource: "AvatarKit", withExtension: "framework")!
+//            return Bundle(url: url)!
+//        }
+//    }
+    return NSBundle_bundleForClass_real(bundleClass, selector, classToGet)
+}
+
+extension Bundle {
+    static let AvatarKit = Bundle(path: "/System/Library/PrivateFrameworks/AvatarKit.framework")!
+    static let AvatarUI = Bundle(path: "/System/Library/PrivateFrameworks/AvatarUI.framework")!
+}
+
+private func AVTUIEnvironment_storeLocation_hook(bundleClass: AnyClass, selector: Selector) -> NSURL {
+    let manager = FileManager.default
+    let documentDirectories = manager.urls(for: .documentDirectory, in: .userDomainMask)
+    if documentDirectories.count < 1 {
+        fatalError("No document directory?")
+    }
+    return documentDirectories[0].appendingPathComponent("Avatar", isDirectory: true) as NSURL
+}
+
+private var hooked = false;
+private func hookMethods() {
+    if hooked {
+        return
+    }
+    hooked = true
+    guard dlopen("/System/Library/PrivateFrameworks/AvatarUI.framework/AvatarUI", RTLD_LOCAL | RTLD_NOW) != nil else {
+        let errS = dlerror()
+        let err = errS == nil ? "" : String(cString: errS!)
+        fatalError("Can't open library: \(err)")
+    }
+    hookBundle()
+}
+
+private func hookBundle() {
+    guard let method = class_getClassMethod(Bundle.self, Selector(("bundleForClass:"))) else {
+        fatalError("Can't find method")
+    }
+    NSBundle_bundleForClass_real = unsafeBitCast(method_getImplementation(method), to:BundleForClass_Type.self)
+    method_setImplementation(method, unsafeBitCast(NSBundle_bundleForClass_hook as BundleForClass_Type, to: IMP.self))
+}
+
+private let swizzling: (AnyClass?, Selector, Selector) -> () = { forClass, originalSelector, swizzledSelector in
+    guard
+        let originalMethod = class_getInstanceMethod(forClass, originalSelector),
+        let swizzledMethod = class_getInstanceMethod(forClass, swizzledSelector)
+    else { return }
+    method_exchangeImplementations(originalMethod, swizzledMethod)
+}
+
+extension NSObject {
+    static let classInit: Void = {
+        let originalSelector = Selector(("storeLocation"))
+        let swizzledSelector = #selector(swizzled_storeLocation)
+        swizzling(NSClassFromString("AVTUIEnvironment"), originalSelector, swizzledSelector)
+    }()
+    @objc func swizzled_storeLocation() -> NSURL {
+        let documentDirectories = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        return documentDirectories[0].appendingPathComponent("Avatar", isDirectory: true) as NSURL
+    }
 }

@@ -23,6 +23,8 @@
 		F42E882E2283369200FC58E2 /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = F42E882C2283369200FC58E2 /* CHANGELOG.md */; };
 		F43BF3FF22850CB30081B0F9 /* Animoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43BF3FE22850CB30081B0F9 /* Animoji.swift */; };
 		F43D213D228342F100EAA24E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43D213C228342F000EAA24E /* Extensions.swift */; };
+		F484C65924EE5B0F006FB7BE /* AVTCarouselController.h in Headers */ = {isa = PBXBuildFile; fileRef = F484C65824EE5B0F006FB7BE /* AVTCarouselController.h */; };
+		F484C65B24EE5D6F006FB7BE /* AVTAvatarRecordDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = F484C65A24EE5D6F006FB7BE /* AVTAvatarRecordDataSource.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +74,8 @@
 		F4539DD5241F4EFD00664A06 /* AVTView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AVTView.h; sourceTree = "<group>"; };
 		F4539DD6241F4F4900664A06 /* AVTAvatar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AVTAvatar.h; sourceTree = "<group>"; };
 		F4539DD7241F4FB600664A06 /* AVTRecordView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AVTRecordView.h; sourceTree = "<group>"; };
+		F484C65824EE5B0F006FB7BE /* AVTCarouselController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVTCarouselController.h; sourceTree = "<group>"; };
+		F484C65A24EE5D6F006FB7BE /* AVTAvatarRecordDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVTAvatarRecordDataSource.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +154,8 @@
 				F4539DD6241F4F4900664A06 /* AVTAvatar.h */,
 				F4539DD7241F4FB600664A06 /* AVTRecordView.h */,
 				F4539DD5241F4EFD00664A06 /* AVTView.h */,
+				F484C65824EE5B0F006FB7BE /* AVTCarouselController.h */,
+				F484C65A24EE5D6F006FB7BE /* AVTAvatarRecordDataSource.h */,
 			);
 			path = Headers;
 			sourceTree = "<group>";
@@ -162,7 +168,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				71EB037F1FB96D3F00D2A101 /* AnimojiView.h in Headers */,
+				F484C65B24EE5D6F006FB7BE /* AVTAvatarRecordDataSource.h in Headers */,
 				710F67151FB54D1C0077FBD7 /* Animoji.h in Headers */,
+				F484C65924EE5B0F006FB7BE /* AVTCarouselController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,6 +231,7 @@
 					};
 					718273921FB54E4100635687 = {
 						CreatedOnToolsVersion = 9.1;
+						LastSwiftMigration = 1160;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -485,11 +494,14 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = NNRNHY2N8B;
 				INFOPLIST_FILE = Example/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.efremidze.Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -499,11 +511,13 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = NNRNHY2N8B;
 				INFOPLIST_FILE = Example/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.efremidze.Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

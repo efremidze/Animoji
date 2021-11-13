@@ -10,7 +10,7 @@ import Foundation
 import ObjectiveC.runtime
 
 // https://codelle.com/blog/2016/2/calling-methods-from-strings-in-swift/
-func extractMethod(_ owner: AnyObject, _ selector: Selector, _ arg1: Any?) -> AnyObject? {
+public func extractMethod(_ owner: AnyObject, _ selector: Selector, _ arg1: Any?) -> AnyObject? {
     guard let method = getMethod(owner, selector) else { return nil }
     let imp = method_getImplementation(method)
     typealias CFunction = @convention(c) (AnyObject, Selector, Any?) -> Unmanaged<AnyObject>
@@ -51,3 +51,10 @@ extension Associable where Self: NSObject {
     }
 }
 extension NSObject: Associable {}
+
+extension Bundle {
+    static let AvatarKit = Bundle(path: "/System/Library/PrivateFrameworks/AvatarKit.framework")!
+    static let AvatarUI = Bundle(path: "/System/Library/PrivateFrameworks/AvatarUI.framework")!
+}
+
+// https://github.com/LeoNatan/Apple-Runtime-Headers/tree/master/iOS/PrivateFrameworks/AvatarUI.framework
