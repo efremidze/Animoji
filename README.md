@@ -15,8 +15,6 @@
 
 <img src="https://thumbs.gfycat.com/FlawlessCleverBluejay-size_restricted.gif" width="320">
 
-[Demo Video](https://gfycat.com/gifs/detail/FlawlessCleverBluejay)
-
 ```
 $ pod try Animoji
 ```
